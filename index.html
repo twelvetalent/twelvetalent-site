@@ -8,6 +8,7 @@
   <link rel="icon" href="/favicon.ico" type="image/x-icon" />
   <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600&family=Poppins:wght@300;500;600&display=swap" rel="stylesheet">
   <style>
+    /* Marquee animation */
     .marquee {
       width: 100%;
       overflow: hidden;
@@ -36,8 +37,16 @@
     .marquee-content {
       animation: marquee 30s linear infinite;
     }
+
+    /* Additional CSS for making sure hover effect works well on mobile */
+    @media (max-width: 640px) {
+      .hover\:scale-105:hover {
+        transform: none; /* Disables the scale effect on small screens */
+      }
+    }
   </style>
 </head>
+
 <body class="bg-[#FFDE59] text-black font-sans" style="font-family: 'Archivo', sans-serif;">
 
   <!-- Navigation -->
@@ -174,19 +183,19 @@
   <div class="container mx-auto text-center">
     <h3 class="text-4xl font-semibold mb-6">Our Features</h3>
     <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-16">
-      <div class="hover:scale-105 transition-transform">
+      <div class="hover:scale-105 transition-transform max-w-full">
         <h4 class="text-2xl font-semibold mb-2">Transparent Pricing</h4>
         <p class="text-lg">Price parity across all clients means one consistent, high-quality service for everyone.</p>
       </div>
-      <div class="hover:scale-105 transition-transform">
+      <div class="hover:scale-105 transition-transform max-w-full">
         <h4 class="text-2xl font-semibold mb-2">Platform</h4>
         <p class="text-lg">Securely review submissions and book interviews directly through our online portal. Or, we can integrate with your existing ATS.</p>
       </div>
-      <div class="hover:scale-105 transition-transform">
+      <div class="hover:scale-105 transition-transform max-w-full">
         <h4 class="text-2xl font-semibold mb-2">Work with Experts</h4>
         <p class="text-lg">Our talent partners have a strong and nuanced understanding of the tech industry. Talk to us for insights and benchmarking advice.</p>
       </div>
-      <div class="hover:scale-105 transition-transform">
+      <div class="hover:scale-105 transition-transform max-w-full">
         <h4 class="text-2xl font-semibold mb-2">Zero Risk</h4>
         <p class="text-lg">No upfront fees, no hidden costs, and we don't need exclusivity.</p>
       </div>
