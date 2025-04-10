@@ -6,51 +6,158 @@
   <title>Twelve Talent</title>
   <script src="https://cdn.tailwindcss.com"></script>
   <link rel="icon" href="/favicon.ico" type="image/x-icon" />
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600&family=Poppins:wght@300;500;600&display=swap" rel="stylesheet">
+  <style>
+    .marquee {
+      width: 100%;
+      overflow: hidden;
+      position: relative;
+    }
+    .marquee-content {
+      display: flex;
+      animation: marquee 30s linear infinite;
+    }
+    .marquee img {
+      width: 120px;
+      margin: 0 15px;
+    }
+    @keyframes marquee {
+      0% {
+        transform: translateX(0);
+      }
+      100% {
+        transform: translateX(-100%);
+      }
+    }
+  </style>
 </head>
-<body class="bg-[#FFDE59] text-black font-sans">
+<body class="bg-[#FFDE59] text-black font-sans" style="font-family: 'Archivo', sans-serif;">
+
   <!-- Navigation -->
-  <header class="bg-white py-6 shadow-md">
-    <div class="container mx-auto flex justify-between items-center">
-      <img src="https://raw.githubusercontent.com/twelvetalent/twelvetalent-site/refs/heads/main/TWELVE%20with%20logo%20no%20background.png" alt="Twelve Logo" class="w-32 h-auto block ml-4" />
-      <nav class="space-x-6 text-sm font-medium uppercase">
-        <a href="index.html" class="hover:underline">Home</a>
-        <a href="services.html" class="hover:underline">Services</a>
-        <a href="join.html" class="hover:underline">Join Us</a>
-        <a href="contact.html" class="hover:underline">Contact</a>
-        <a href="login.html" class="hover:underline">Login</a>
+  <header class="bg-white py-6 shadow-lg">
+    <div class="container mx-auto flex justify-between items-center px-4">
+      <img src="https://raw.githubusercontent.com/twelvetalent/twelvetalent-site/refs/heads/main/TWELVE%20with%20logo%20no%20background.png" alt="Twelve Logo" class="w-40 h-auto" />
+      <nav class="space-x-8 text-lg font-medium">
+        <a href="index.html" class="text-gray-700 hover:text-black transition-colors">Home</a>
+        <a href="services.html" class="text-gray-700 hover:text-black transition-colors">Services</a>
+        <a href="join.html" class="text-gray-700 hover:text-black transition-colors">Join Us</a>
+        <a href="contact.html" class="text-gray-700 hover:text-black transition-colors">Contact</a>
+        <a href="login.html" class="text-gray-700 hover:text-black transition-colors">Login</a>
       </nav>
     </div>
   </header>
 
   <!-- Hero Section -->
-  <section class="bg-[#FFDE59] text-black py-16">
+  <section class="bg-gradient-to-r from-[#FFDE59] to-[#FFD700] text-black py-24">
     <div class="container mx-auto text-center">
-      <h2 class="text-5xl font-bold mb-6">Better Recruitment. Built for Tech.</h2>
-      <p class="text-lg max-w-2xl mx-auto opacity-90">Twelve is a tech recruitment agency built by people who’ve run talent at some of Europe’s most successful startups. We make hiring easier, cheaper and better.</p>
+      <h2 class="text-5xl font-bold leading-tight mb-6">Better Recruitment. Built for Tech.</h2>
+      <p class="text-lg max-w-2xl mx-auto opacity-80 mb-6">Twelve is a tech recruitment agency built by people who’ve run talent at some of Europe’s most successful startups. We make hiring easier, cheaper, and better.</p>
+      <button class="bg-black text-white py-2 px-8 rounded-full text-lg font-semibold hover:bg-[#333] transition-colors mt-4">Get Started</button>
     </div>
   </section>
 
-  <!-- Overview Section -->
-  <section class="py-20 bg-white">
-    <div class="container mx-auto grid md:grid-cols-3 gap-8 text-center">
-      <div class="p-6 border rounded-lg shadow-sm">
-        <h3 class="text-xl font-semibold mb-2">12% Fee</h3>
-        <p class="text-sm text-gray-700">We charge 12%, not 18-25% like everyone else.</p>
+  <!-- Trusted by Leaders Section with Marquee -->
+  <section class="bg-white py-20">
+    <div class="container mx-auto text-center">
+      <h3 class="text-4xl font-semibold mb-8">Trusted by Leaders</h3>
+      <p class="text-lg mb-12">Our consultants at Twelve have helped build tech teams for some of the world's most notable brands.</p>
+      
+      <!-- Marquee Banner (Rotating Ribbon) -->
+      <div class="marquee">
+        <div class="marquee-content">
+          <!-- Add your 10 company logos here -->
+          <img src="Sainsburys.png" alt="Sainsburys" />
+          <img src="Tesco-Logo.svg" alt="Tesco" />
+          <img src="just eat.png" alt="Just Eat" />
+          <img src="Improbable.png" alt="Improbable" />
+          <img src="Trainline-logo.webp" alt="Trainline" />
+          <img src="Gousto.png" alt="Gousto" />
+          <img src="Monzo.png" alt="Monzo" />
+          <img src="bbc.png" alt="BBC" />
+          <img src="DAZN.png" alt="DAZN" />
+          <img src="expedia.svg" alt="Expedia" />
+          <img src="booking.png" alt="Booking" />
+          <img src="skyscanner-logo2.png" alt="Skyscanner" />
+          <img src="lastminute.png" alt="Lastminute" />
+          <img src="101 ways.svg" alt="101 Ways" />
+          <img src="equal-experts-logo.png" alt="Equal Experts" />
+        </div>
       </div>
-      <div class="p-6 border rounded-lg shadow-sm">
-        <h3 class="text-xl font-semibold mb-2">12+ Years Experience</h3>
-        <p class="text-sm text-gray-700">We’ve led internal hiring at Trainline, Checkout.com, and MoonPay.</p>
+    </div>
+  </section>
+
+  <!-- Why Twelve Section -->
+  <section class="bg-[#FFDE59] text-black py-24">
+    <div class="container mx-auto text-center">
+      <h3 class="text-4xl font-semibold mb-6">Why Twelve?</h3>
+      <p class="text-lg max-w-3xl mx-auto opacity-90 mb-6">Salaries in the technology sector have risen faster than inflation for years, meaning recruitment fees have enjoyed the same trend. In a market where tech talent is more accessible than ever, we don't think that's fair.</p>
+      <p class="text-lg max-w-3xl mx-auto opacity-90 mb-6">At Twelve, we leverage modern technology, AI, and human insight to streamline the recruitment lifecycle, increase engagement, improve customer service, and reduce costs.</p>
+      <button class="bg-black text-white py-2 px-8 rounded-full text-lg font-semibold hover:bg-[#333] transition-colors mt-4">Find out more</button>
+    </div>
+  </section>
+
+  <!-- By the Numbers Section -->
+  <section class="bg-white py-24">
+    <div class="container mx-auto text-center">
+      <h3 class="text-4xl font-semibold mb-8">By the Numbers</h3>
+      <div class="grid md:grid-cols-4 gap-16">
+        <div class="flex flex-col items-center">
+          <h4 class="text-5xl font-bold text-black">193</h4>
+          <p class="text-xl">Happy Clients</p>
+        </div>
+        <div class="flex flex-col items-center">
+          <h4 class="text-5xl font-bold text-black">655</h4>
+          <p class="text-xl">Perm Hires</p>
+        </div>
+        <div class="flex flex-col items-center">
+          <h4 class="text-5xl font-bold text-black">630</h4>
+          <p class="text-xl">Contract Hires</p>
+        </div>
+        <div class="flex flex-col items-center">
+          <h4 class="text-5xl font-bold text-black">33%</h4>
+          <p class="text-xl">Indicative Cost Saving</p>
+        </div>
       </div>
-      <div class="p-6 border rounded-lg shadow-sm">
-        <h3 class="text-xl font-semibold mb-2">AI-Powered</h3>
-        <p class="text-sm text-gray-700">We use AI to find the right candidates faster. No fluff.</p>
+    </div>
+  </section>
+
+  <!-- Our Features Section -->
+  <section class="bg-[#FFDE59] text-black py-24">
+    <div class="container mx-auto text-center">
+      <h3 class="text-4xl font-semibold mb-8">Our Features</h3>
+      <div class="grid md:grid-cols-3 gap-16">
+        <div class="hover:scale-105 transition-transform">
+          <h4 class="text-2xl font-semibold mb-2">Transparent Pricing</h4>
+          <p class="text-lg">Price parity across all clients means one consistent, high-quality service for everyone.</p>
+        </div>
+        <div class="hover:scale-105 transition-transform">
+          <h4 class="text-2xl font-semibold mb-2">Platform</h4>
+          <p class="text-lg">Securely review submissions and book interviews directly through our online portal.</p>
+        </div>
+        <div class="hover:scale-105 transition-transform">
+          <h4 class="text-2xl font-semibold mb-2">Zero Risk</h4>
+          <p class="text-lg">No upfront fees, no hidden costs, and we don’t need exclusivity.</p>
+        </div>
       </div>
     </div>
   </section>
 
   <!-- Footer -->
-  <footer class="bg-[#FFDE59] p-4 text-center border-t border-black">
-    <p class="text-sm">© 2025 Twelve Group Ltd</p>
+  <footer class="bg-black text-white py-12">
+    <div class="container mx-auto text-center">
+      <div class="flex justify-center space-x-12 mb-6">
+        <a href="mailto:info@twelvetalent.co" class="hover:text-[#FFDE59] transition-colors">
+          <img src="email-logo.svg" alt="Email" class="w-8 h-8 mx-2" />
+        </a>
+        <a href="https://www.linkedin.com/company/twelvetalent/" class="hover:text-[#FFDE59] transition-colors">
+          <img src="linkedin-logo.svg" alt="LinkedIn" class="w-8 h-8 mx-2" />
+        </a>
+        <a href="https://twitter.com/twelvetalent" class="hover:text-[#FFDE59] transition-colors">
+          <img src="twitter-logo.svg" alt="Twitter" class="w-8 h-8 mx-2" />
+        </a>
+      </div>
+      <p class="text-sm opacity-70">© 2025 Twelve Talent. All rights reserved.</p>
+    </div>
   </footer>
 </body>
 </html>
