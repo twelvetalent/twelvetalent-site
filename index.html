@@ -44,7 +44,24 @@
   <header class="bg-white py-6 shadow-lg">
     <div class="container mx-auto flex justify-between items-center px-4">
       <img src="https://raw.githubusercontent.com/twelvetalent/twelvetalent-site/refs/heads/main/TWELVE%20with%20logo%20no%20background.png" alt="Twelve Logo" class="w-40 h-auto" />
-      <nav class="space-x-8 text-lg font-medium">
+      <nav class="space-x-8 text-lg font-medium hidden md:flex">
+        <a href="index.html" class="text-gray-700 hover:text-black transition-colors">Home</a>
+        <a href="services.html" class="text-gray-700 hover:text-black transition-colors">Services</a>
+        <a href="join.html" class="text-gray-700 hover:text-black transition-colors">Join Us</a>
+        <a href="contact.html" class="text-gray-700 hover:text-black transition-colors">Contact</a>
+        <a href="login.html" class="text-gray-700 hover:text-black transition-colors">Login</a>
+      </nav>
+      <!-- Hamburger Icon -->
+      <button id="hamburger" class="md:hidden text-black focus:outline-none">
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="h-8 w-8">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+        </svg>
+      </button>
+    </div>
+
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="md:hidden hidden bg-white py-4">
+      <nav class="text-center space-y-4">
         <a href="index.html" class="text-gray-700 hover:text-black transition-colors">Home</a>
         <a href="services.html" class="text-gray-700 hover:text-black transition-colors">Services</a>
         <a href="join.html" class="text-gray-700 hover:text-black transition-colors">Join Us</a>
@@ -54,14 +71,17 @@
     </div>
   </header>
 
-  <!-- Hero Section -->
-  <section class="bg-gradient-to-r from-[#FFDE59] to-[#FFD700] text-black py-24">
-    <div class="container mx-auto text-center">
-      <h2 class="text-5xl font-bold leading-tight mb-6">Better Recruitment. Built for Tech.</h2>
-      <p class="text-lg max-w-2xl mx-auto opacity-80 mb-6">Twelve is a tech recruitment agency built by people who’ve run talent at some of Europe’s most successful startups. We make hiring easier, cheaper, and better.</p>
-      <button class="bg-black text-white py-2 px-8 rounded-full text-lg font-semibold hover:bg-[#333] transition-colors mt-4">Get Started</button>
-    </div>
-  </section>
+<!-- Hero Section -->
+<section class="bg-gradient-to-r from-[#FFDE59] to-[#FFD700] text-black py-24">
+  <div class="container mx-auto text-center">
+    <h2 class="text-5xl font-bold leading-tight mb-6 flex flex-wrap justify-center">
+      <span class="w-full sm:w-auto">Better Recruitment.</span>
+      <span class="w-full sm:w-auto">Built for Tech.</span>
+    </h2>
+    <p class="text-lg max-w-2xl mx-auto opacity-80 mb-6">Twelve is a tech recruitment agency built by people who’ve run talent at some of Europe’s most successful startups. We make hiring easier, cheaper, and better.</p>
+    <button class="bg-black text-white py-2 px-8 rounded-full text-lg font-semibold hover:bg-[#333] transition-colors mt-4">Get Started</button>
+  </div>
+</section>
 
   <!-- Trusted by Leaders Section with Marquee -->
   <section class="bg-white py-20">
@@ -128,7 +148,7 @@
 <section class="py-16 bg-white">
   <div class="container mx-auto text-center">
     <h3 class="text-4xl font-semibold mb-6">By the Numbers</h3>
-    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-8">
+    <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8">
       <div class="hover:scale-105 transition-transform">
         <h4 class="text-5xl font-bold text-black">193</h4>
         <p class="text-xl">Happy Clients</p>
@@ -173,6 +193,7 @@
     </div>
   </div>
 </section>
+
 <!-- Footer Section -->
 <footer class="bg-black text-white py-8">
   <div class="container mx-auto text-center">
@@ -198,3 +219,15 @@
     </div>
   </div>
 </footer>
+
+<script>
+  const hamburger = document.getElementById('hamburger');
+  const mobileMenu = document.getElementById('mobile-menu');
+  
+  hamburger.addEventListener('click', () => {
+    mobileMenu.classList.toggle('hidden');
+  });
+</script>
+
+</body>
+</html>
