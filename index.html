@@ -12,17 +12,17 @@
     /* Base font for body */
     body {
       font-family: 'Archivo', sans-serif;
-      background-color: #F9FAFB; /* Light gray background for a softer feel */
-      color: #1F2937; /* Dark gray for primary text - Tailwind gray-800 */
+      background-color: #F9FAFB; 
+      color: #1F2937; 
     }
 
     /* Headings font */
     h1, h2, h3, h4, h5, h6 {
       font-family: 'Poppins', sans-serif;
-      font-weight: 700; /* Bolder headings */
+      font-weight: 700; 
     }
 
-    /* Custom yellow color from original design, can be used as an accent */
+    /* Custom yellow color */
     .bg-custom-yellow {
       background-color: #FFDE59;
     }
@@ -30,34 +30,12 @@
       color: #FFDE59;
     }
 
-    /* Primary action button style - Enhanced prominence */
+    /* Primary action button style */
     .btn-primary {
-      @apply bg-black text-white py-4 px-10 rounded-full text-xl font-bold shadow-md transition-all duration-300 ease-in-out; /* Changed font-semibold to font-bold, added shadow-md */
-      @apply hover:bg-gray-800 hover:shadow-lg transform hover:scale-107; /* Increased hover:scale from 105 to 107 */
+      @apply bg-black text-white py-4 px-10 rounded-full text-xl font-bold shadow-md transition-all duration-300 ease-in-out; 
+      @apply hover:bg-gray-800 hover:shadow-lg transform hover:scale-107; 
     }
     
-    /* Styling for the logo grid */
-    .logo-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(120px, 1fr)); /* Responsive grid */
-      gap: 2rem; /* Spacing between logos */
-      align-items: center;
-    }
-
-    .logo-grid img {
-      max-width: 130px; /* Max width for logos */
-      height: auto;     /* Maintain aspect ratio */
-      margin: 0 auto;   /* Center logos within grid cells */
-      filter: grayscale(100%); 
-      opacity: 0.7;
-      transition: filter 0.3s ease, opacity 0.3s ease;
-    }
-
-    .logo-grid img:hover {
-      filter: grayscale(0%); 
-      opacity: 1;
-    }
-
     /* Section fade-in animation */
     .section-fade-in {
       opacity: 0;
@@ -82,7 +60,7 @@
         width: 100%;
         transform: scaleX(0);
         height: 2px;
-        bottom: -2px;
+        bottom: -2px; 
         left: 0;
         background-color: #FFDE59; 
         transform-origin: bottom right;
@@ -91,6 +69,63 @@
     .custom-underline:hover::after {
         transform: scaleX(1);
         transform-origin: bottom left;
+    }
+
+    /* Custom black underline for prominent CTA links */
+    .cta-link-underline {
+        text-decoration: none;
+        position: relative;
+        display: inline-block; 
+        font-family: 'Poppins', sans-serif; 
+        font-weight: 700; 
+        font-size: 1.25rem; 
+        line-height: 1.75rem; 
+        color: #000000; 
+        transition: color 0.3s ease-in-out;
+        padding-bottom: 5px; 
+    }
+    .cta-link-underline::after {
+        content: '';
+        position: absolute;
+        width: 100%;
+        transform: scaleX(0);
+        height: 2.5px; 
+        bottom: 0px; 
+        left: 0;
+        background-color: #000000; 
+        transform-origin: bottom right;
+        transition: transform 0.3s ease-out;
+    }
+    .cta-link-underline:hover::after {
+        transform: scaleX(1);
+        transform-origin: bottom left;
+    }
+    .cta-link-underline:hover {
+        color: #374151; 
+    }
+
+    /* Logo Carousel Styles */
+    .logo-carousel-container {
+      width: 100%;
+      overflow: hidden;
+      position: relative;
+      padding: 2rem 0;
+    }
+    .logo-carousel-track {
+      display: flex;
+    }
+    .logo-carousel-track img {
+      width: 130px; 
+      height: auto;   
+      margin: 0 30px; 
+      object-fit: contain; 
+      filter: grayscale(100%);
+      opacity: 0.7;
+      transition: filter 0.3s ease, opacity 0.3s ease;
+    }
+    .logo-carousel-track img:hover {
+      filter: grayscale(0%);
+      opacity: 1;
     }
 
   </style>
@@ -138,7 +173,7 @@
         <p class="text-lg md:text-xl max-w-2xl mx-auto text-gray-800 mb-10">
           Twelve is a tech recruitment agency built by people who’ve run talent at some of Europe’s most successful startups. We make hiring easier, cheaper, and better.
         </p>
-        <a href="contact.html" class="btn-primary inline-block">Get Started <span aria-hidden="true">&rarr;</span></a>
+        <a href="contact.html" class="cta-link-underline mt-10">Get Started <span aria-hidden="true">&rarr;</span></a>
       </div>
     </section>
 
@@ -149,19 +184,21 @@
           Our consultants at Twelve have a proven track record, helping build exceptional tech teams for some of the world's most notable brands.
         </p>
             
-        <div class="logo-grid">
-          <img src="images/Sainsburys.png" alt="Sainsburys Logo" />
-          <img src="images/Tesco-Logo.svg" alt="Tesco Logo" />
-          <img src="images/just eat.png" alt="Just Eat Logo" />
-          <img src="images/Improbable.png" alt="Improbable Logo" />
-          <img src="images/Trainline-logo.webp" alt="Trainline Logo" />
-          <img src="images/Gousto.png" alt="Gousto Logo" />
-          <img src="images/Monzo.png" alt="Monzo Logo" />
-          <img src="images/bbc.png" alt="BBC Logo" />
-          <img src="images/DAZN.png" alt="DAZN Logo" />
-          <img src="images/expedia.svg" alt="Expedia Logo" />
-          <img src="images/booking.png" alt="Booking.com Logo" />
-          <img src="images/skyscanner-logo2.png" alt="Skyscanner Logo" />
+        <div class="logo-carousel-container" id="logoCarouselContainer">
+          <div class="logo-carousel-track" id="logoCarouselTrack">
+            <img src="images/logos/sainsburys.svg" alt="Sainsbury's Logo" />
+            <img src="images/logos/tesco.svg" alt="Tesco Logo" />
+            <img src="images/logos/just-eat.png" alt="Just Eat Logo" />
+            <img src="images/logos/improbable.svg" alt="Improbable Logo" />
+            <img src="images/logos/trainline.svg" alt="Trainline Logo" />
+            <img src="images/logos/gousto.svg" alt="Gousto Logo" />
+            <img src="images/logos/monzo.svg" alt="Monzo Logo" />
+            <img src="images/logos/bbc.svg" alt="BBC Logo" />
+            <img src="images/logos/dazn.svg" alt="DAZN Logo" />
+            <img src="images/logos/expedia.svg" alt="Expedia Logo" />
+            <img src="images/logos/booking.svg" alt="Booking.com Logo" />
+            <img src="images/logos/skyscanner.svg" alt="Skyscanner Logo" />
+            </div>
           </div>
       </div>
     </section>
@@ -177,7 +214,7 @@
             At Twelve, we leverage modern technology, AI-driven insights, and deep human expertise to streamline the recruitment lifecycle, enhance engagement, deliver exceptional customer service, and ultimately reduce your hiring costs.
           </p>
         </div>
-        <a href="services.html" class="btn-primary inline-block mt-10">Learn More <span aria-hidden="true">&rarr;</span></a>
+        <a href="services.html" class="cta-link-underline mt-10">Learn More <span aria-hidden="true">&rarr;</span></a>
       </div>
     </section>
 
@@ -278,23 +315,80 @@
 
   // Simple Scroll Fade-in Effect for Sections
   const sections = document.querySelectorAll('.section-fade-in');
-  const observerOptions = {
+  const sectionObserverOptions = { 
     root: null, 
     rootMargin: '0px',
     threshold: 0.1 
   };
 
-  const observer = new IntersectionObserver((entries, observer) => {
+  const sectionObserver = new IntersectionObserver((entries, observer) => { 
     entries.forEach(entry => {
       if (entry.isIntersecting) {
         entry.target.classList.add('visible');
       }
     });
-  }, observerOptions);
+  }, sectionObserverOptions);
 
   sections.forEach(section => {
-    observer.observe(section);
+    sectionObserver.observe(section);
   });
+
+  // Logo Carousel Logic
+  const carouselContainer = document.getElementById('logoCarouselContainer'); // Get the container
+  const track = document.getElementById('logoCarouselTrack');
+  let animationId;
+  const scrollSpeed = 0.5; 
+  let isHoverPaused = false; // Flag for hover pause
+
+  function cloneLogos() {
+    if (!track) return; 
+    const logos = track.querySelectorAll('img');
+    logos.forEach(logo => {
+      const clone = logo.cloneNode(true);
+      track.appendChild(clone);
+    });
+  }
+
+  function startCarousel() {
+    if (!track) return; 
+
+    let currentPosition = 0;
+    const trackWidth = track.scrollWidth / 2; 
+
+    function animate() {
+      if (!isHoverPaused) { // Only scroll if not paused by hover
+        currentPosition -= scrollSpeed;
+        if (currentPosition <= -trackWidth) {
+          currentPosition = 0; 
+        }
+        track.style.transform = `translateX(${currentPosition}px)`;
+      }
+      animationId = requestAnimationFrame(animate);
+    }
+    animationId = requestAnimationFrame(animate);
+  }
+
+  if (track && carouselContainer) { // Ensure both elements exist
+    cloneLogos(); 
+
+    const allLogos = track.querySelectorAll('img');
+    let totalWidth = 0;
+    allLogos.forEach(img => {
+        const style = window.getComputedStyle(img);
+        totalWidth += img.offsetWidth + parseInt(style.marginLeft) + parseInt(style.marginRight);
+    });
+    track.style.width = `${totalWidth}px`;
+
+    startCarousel();
+
+    // Pause on hover
+    carouselContainer.addEventListener('mouseenter', () => {
+        isHoverPaused = true;
+    });
+    carouselContainer.addEventListener('mouseleave', () => {
+        isHoverPaused = false;
+    });
+  }
 
 </script>
 
