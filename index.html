@@ -113,18 +113,18 @@
     }
     .logo-carousel-track {
       display: flex;
+      white-space: nowrap; /* Ensure items stay in a single line */
     }
     .logo-carousel-track img {
       width: 130px; 
-      height: auto;   
+      height: 60px;  
       margin: 0 30px; 
       object-fit: contain; 
-      filter: grayscale(100%);
-      opacity: 0.7;
-      transition: filter 0.3s ease, opacity 0.3s ease;
+      opacity: 0.9; 
+      transition: opacity 0.3s ease; 
+      flex-shrink: 0; /* Prevent images from shrinking */
     }
     .logo-carousel-track img:hover {
-      filter: grayscale(0%);
       opacity: 1;
     }
 
@@ -164,8 +164,10 @@
   </header>
 
   <main>
-    <section class="bg-custom-yellow text-black py-28 md:py-32 section-fade-in">
+    <section class="bg-custom-yellow text-black py-20 md:py-24 section-fade-in">
       <div class="container mx-auto text-center px-6">
+        <img src="https://umsousercontent.com/lib_MeASmRnviYgijZcI/fsxa7zg55peesgq8.png" alt="Recruitment experts illustration" class="mx-auto mb-8 w-full max-w-xs md:max-w-sm h-auto" />
+        
         <h1 class="text-4xl sm:text-5xl md:text-6xl font-extrabold leading-tight mb-6" style="font-family: 'Poppins', sans-serif;">
           <span class="block">Better Recruitment.</span>
           <span class="block">Built for Tech.</span>
@@ -186,18 +188,18 @@
             
         <div class="logo-carousel-container" id="logoCarouselContainer">
           <div class="logo-carousel-track" id="logoCarouselTrack">
-            <img src="images/logos/sainsburys.svg" alt="Sainsbury's Logo" />
-            <img src="images/logos/tesco.svg" alt="Tesco Logo" />
-            <img src="images/logos/just-eat.png" alt="Just Eat Logo" />
-            <img src="images/logos/improbable.svg" alt="Improbable Logo" />
-            <img src="images/logos/trainline.svg" alt="Trainline Logo" />
-            <img src="images/logos/gousto.svg" alt="Gousto Logo" />
-            <img src="images/logos/monzo.svg" alt="Monzo Logo" />
-            <img src="images/logos/bbc.svg" alt="BBC Logo" />
-            <img src="images/logos/dazn.svg" alt="DAZN Logo" />
-            <img src="images/logos/expedia.svg" alt="Expedia Logo" />
-            <img src="images/logos/booking.svg" alt="Booking.com Logo" />
-            <img src="images/logos/skyscanner.svg" alt="Skyscanner Logo" />
+            <img src="https://umsousercontent.com/lib_MeASmRnviYgijZcI/srl79k99x4lax5jy.png?w=280&h=200" alt="Equal Experts Logo" />
+            <img src="https://umsousercontent.com/lib_MeASmRnviYgijZcI/d3up94t5qpvv612k.png?w=280&h=200" alt="MoonPay Logo" />
+            <img src="https://umsousercontent.com/lib_MeASmRnviYgijZcI/snf292rdna4k1imn.svg" alt="Expedia Logo" />
+            <img src="https://umsousercontent.com/lib_MeASmRnviYgijZcI/le6h3xqyyo7c28ue.png?w=280&h=200" alt="Skyscanner Logo" />
+            <img src="https://umsousercontent.com/lib_MeASmRnviYgijZcI/2p2md73q45aspm03.svg" alt="Tesco Logo" />
+            <img src="https://umsousercontent.com/lib_MeASmRnviYgijZcI/eike0ef8wb84opj5.png?w=280&h=200" alt="DWP Logo" />
+            <img src="https://umsousercontent.com/lib_MeASmRnviYgijZcI/xr0usosfn0atdd1n.webp" alt="Trainline Logo" />
+            <img src="https://umsousercontent.com/lib_MeASmRnviYgijZcI/83aod57e4lgi47rs.png?w=280&h=200" alt="Monzo Logo" /> 
+            <img src="https://umsousercontent.com/lib_MeASmRnviYgijZcI/wynu7034y3v3i76y.png?w=280&h=200" alt="BBC Logo" />
+            <img src="https://umsousercontent.com/lib_MeASmRnviYgijZcI/1abm8nq9mgxmbgve.png?w=280&h=200" alt="Gousto Logo" />
+            <img src="https://umsousercontent.com/lib_MeASmRnviYgijZcI/s6mv740hgc5k1hko.svg" alt="Just Eat Logo" />
+            <img src="https://umsousercontent.com/lib_MeASmRnviYgijZcI/oiap0v4oniky3c2m.png?w=280&h=200" alt="Improbable Logo" />
             </div>
           </div>
       </div>
@@ -334,15 +336,15 @@
   });
 
   // Logo Carousel Logic
-  const carouselContainer = document.getElementById('logoCarouselContainer'); // Get the container
+  const carouselContainer = document.getElementById('logoCarouselContainer'); 
   const track = document.getElementById('logoCarouselTrack');
   let animationId;
   const scrollSpeed = 0.5; 
-  let isHoverPaused = false; // Flag for hover pause
+  let isHoverPaused = false; 
 
   function cloneLogos() {
     if (!track) return; 
-    const logos = track.querySelectorAll('img');
+    const logos = Array.from(track.children); 
     logos.forEach(logo => {
       const clone = logo.cloneNode(true);
       track.appendChild(clone);
@@ -353,22 +355,28 @@
     if (!track) return; 
 
     let currentPosition = 0;
-    const trackWidth = track.scrollWidth / 2; 
+    const originalLogosWidth = track.scrollWidth / 2; 
+
 
     function animate() {
-      if (!isHoverPaused) { // Only scroll if not paused by hover
+      if (!isHoverPaused) { 
         currentPosition -= scrollSpeed;
-        if (currentPosition <= -trackWidth) {
+        if (currentPosition <= -originalLogosWidth) {
+          track.style.transition = 'none'; 
+          track.style.transform = `translateX(0px)`;
+          track.offsetHeight; 
+          track.style.transition = ''; 
           currentPosition = 0; 
+        } else {
+            track.style.transform = `translateX(${currentPosition}px)`;
         }
-        track.style.transform = `translateX(${currentPosition}px)`;
       }
       animationId = requestAnimationFrame(animate);
     }
     animationId = requestAnimationFrame(animate);
   }
 
-  if (track && carouselContainer) { // Ensure both elements exist
+  if (track && carouselContainer) { 
     cloneLogos(); 
 
     const allLogos = track.querySelectorAll('img');
@@ -377,11 +385,10 @@
         const style = window.getComputedStyle(img);
         totalWidth += img.offsetWidth + parseInt(style.marginLeft) + parseInt(style.marginRight);
     });
-    track.style.width = `${totalWidth}px`;
+    track.style.width = `${totalWidth}px`; 
 
-    startCarousel();
+    startCarousel(); 
 
-    // Pause on hover
     carouselContainer.addEventListener('mouseenter', () => {
         isHoverPaused = true;
     });
