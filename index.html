@@ -6,7 +6,8 @@
   <meta name="description" content="Twelve Talent is a tech recruitment agency built by people who’ve run talent at some of Europe’s most successful startups. We make hiring easier, cheaper, and better." />
   <title>Twelve Talent - Tech Recruitment Experts</title>
   <script src="https://cdn.tailwindcss.com"></script>
-  <link rel="icon" href="images/favicon.ico" type="image/x-icon" /> <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&family=Poppins:wght@300;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="icon" href="images/favicon.ico" type="image/x-icon" /> 
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700&family=Poppins:wght@300;500;600;700;800&display=swap" rel="stylesheet">
   <style>
     /* Base font for body */
     body {
@@ -29,16 +30,10 @@
       color: #FFDE59;
     }
 
-    /* Primary action button style */
+    /* Primary action button style - Enhanced prominence */
     .btn-primary {
-      @apply bg-black text-white py-3 px-8 rounded-full text-lg font-semibold transition-all duration-300 ease-in-out;
-      @apply hover:bg-gray-800 hover:shadow-lg transform hover:scale-105;
-    }
-
-    /* Secondary action button style (example) */
-    .btn-secondary {
-      @apply bg-transparent border-2 border-black text-black py-3 px-8 rounded-full text-lg font-semibold transition-all duration-300 ease-in-out;
-      @apply hover:bg-black hover:text-white hover:shadow-lg transform hover:scale-105;
+      @apply bg-black text-white py-4 px-10 rounded-full text-xl font-bold shadow-md transition-all duration-300 ease-in-out; /* Changed font-semibold to font-bold, added shadow-md */
+      @apply hover:bg-gray-800 hover:shadow-lg transform hover:scale-107; /* Increased hover:scale from 105 to 107 */
     }
     
     /* Styling for the logo grid */
@@ -53,17 +48,17 @@
       max-width: 130px; /* Max width for logos */
       height: auto;     /* Maintain aspect ratio */
       margin: 0 auto;   /* Center logos within grid cells */
-      filter: grayscale(100%); /* Optional: Make logos grayscale for uniformity */
+      filter: grayscale(100%); 
       opacity: 0.7;
       transition: filter 0.3s ease, opacity 0.3s ease;
     }
 
     .logo-grid img:hover {
-      filter: grayscale(0%); /* Optional: Color on hover */
+      filter: grayscale(0%); 
       opacity: 1;
     }
 
-    /* Section fade-in animation (optional) */
+    /* Section fade-in animation */
     .section-fade-in {
       opacity: 0;
       transform: translateY(20px);
@@ -75,7 +70,7 @@
       transform: translateY(0);
     }
 
-    /* Custom underline for links */
+    /* Custom underline for nav links */
     .custom-underline {
         text-decoration: none;
         position: relative;
@@ -89,7 +84,7 @@
         height: 2px;
         bottom: -2px;
         left: 0;
-        background-color: #FFDE59; /* Accent yellow for underline */
+        background-color: #FFDE59; 
         transform-origin: bottom right;
         transition: transform 0.3s ease-out;
     }
@@ -134,7 +129,7 @@
   </header>
 
   <main>
-    <section class="bg-custom-yellow text-black py-28 md:py-36 section-fade-in">
+    <section class="bg-custom-yellow text-black py-28 md:py-32 section-fade-in">
       <div class="container mx-auto text-center px-6">
         <h1 class="text-4xl sm:text-5xl md:text-6xl font-extrabold leading-tight mb-6" style="font-family: 'Poppins', sans-serif;">
           <span class="block">Better Recruitment.</span>
@@ -143,13 +138,14 @@
         <p class="text-lg md:text-xl max-w-2xl mx-auto text-gray-800 mb-10">
           Twelve is a tech recruitment agency built by people who’ve run talent at some of Europe’s most successful startups. We make hiring easier, cheaper, and better.
         </p>
-        <a href="contact.html" class="btn-primary">Get Started</a> </div>
+        <a href="contact.html" class="btn-primary inline-block">Get Started <span aria-hidden="true">&rarr;</span></a>
+      </div>
     </section>
 
-    <section class="bg-white py-20 md:py-28 section-fade-in">
+    <section class="bg-white py-20 md:py-24 section-fade-in">
       <div class="container mx-auto text-center px-6">
-        <h2 class="text-3xl md:text-4xl font-bold mb-6 text-gray-900">Trusted by Leaders</h2>
-        <p class="text-lg md:text-xl text-gray-700 mb-16 max-w-3xl mx-auto">
+        <h2 class="text-3xl md:text-4xl font-bold mb-8 text-gray-900">Trusted by Leaders</h2>
+        <p class="text-lg md:text-xl text-gray-700 mb-12 max-w-3xl mx-auto">
           Our consultants at Twelve have a proven track record, helping build exceptional tech teams for some of the world's most notable brands.
         </p>
             
@@ -170,10 +166,10 @@
       </div>
     </section>
 
-    <section class="bg-gray-50 text-gray-900 py-20 md:py-28 section-fade-in">
+    <section class="bg-custom-yellow text-black py-20 md:py-24 section-fade-in">
       <div class="container mx-auto text-center px-6">
-        <h2 class="text-3xl md:text-4xl font-bold mb-6">Why Twelve?</h2>
-        <div class="max-w-3xl mx-auto space-y-6 text-lg md:text-xl text-gray-700">
+        <h2 class="text-3xl md:text-4xl font-bold mb-8">Why Twelve?</h2>
+        <div class="max-w-3xl mx-auto space-y-6 text-lg md:text-xl text-gray-800">
           <p>
             Salaries in the technology sector have risen faster than inflation for years, meaning recruitment fees have enjoyed the same trend. In a market where tech talent is more accessible than ever, we believe in fair, transparent value.
           </p>
@@ -181,56 +177,56 @@
             At Twelve, we leverage modern technology, AI-driven insights, and deep human expertise to streamline the recruitment lifecycle, enhance engagement, deliver exceptional customer service, and ultimately reduce your hiring costs.
           </p>
         </div>
-        <a href="services.html" class="inline-block mt-10 text-custom-yellow font-semibold text-lg hover:text-yellow-600 transition-colors custom-underline">Learn More About Our Approach</a>
+        <a href="services.html" class="btn-primary inline-block mt-10">Learn More <span aria-hidden="true">&rarr;</span></a>
       </div>
     </section>
 
-    <section class="py-20 md:py-28 bg-white section-fade-in">
+    <section class="py-20 md:py-24 bg-white section-fade-in">
       <div class="container mx-auto text-center px-6">
-        <h2 class="text-3xl md:text-4xl font-bold mb-16 text-gray-900">By the Numbers</h2>
+        <h2 class="text-3xl md:text-4xl font-bold mb-12 text-gray-900">By the Numbers</h2>
         <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8 md:gap-12">
           <div class="bg-gray-50 p-6 rounded-xl shadow-lg hover:shadow-2xl transition-shadow duration-300 transform hover:-translate-y-1">
-            <h3 class="text-5xl md:text-6xl font-extrabold text-custom-yellow">193</h3>
+            <h3 class="text-4xl md:text-5xl font-extrabold text-black">193</h3> 
             <p class="text-xl text-gray-700 mt-3">Happy Clients</p>
           </div>
           <div class="bg-gray-50 p-6 rounded-xl shadow-lg hover:shadow-2xl transition-shadow duration-300 transform hover:-translate-y-1">
-            <h3 class="text-5xl md:text-6xl font-extrabold text-custom-yellow">655</h3>
+            <h3 class="text-4xl md:text-5xl font-extrabold text-black">655</h3> 
             <p class="text-xl text-gray-700 mt-3">Perm Hires</p>
           </div>
           <div class="bg-gray-50 p-6 rounded-xl shadow-lg hover:shadow-2xl transition-shadow duration-300 transform hover:-translate-y-1">
-            <h3 class="text-5xl md:text-6xl font-extrabold text-custom-yellow">630</h3>
+            <h3 class="text-4xl md:text-5xl font-extrabold text-black">630</h3> 
             <p class="text-xl text-gray-700 mt-3">Contract Hires</p>
           </div>
           <div class="bg-gray-50 p-6 rounded-xl shadow-lg hover:shadow-2xl transition-shadow duration-300 transform hover:-translate-y-1">
-            <h3 class="text-5xl md:text-6xl font-extrabold text-custom-yellow">33%</h3>
+            <h3 class="text-4xl md:text-5xl font-extrabold text-black">33%</h3> 
             <p class="text-xl text-gray-700 mt-3">Indicative Cost Saving</p>
           </div>
         </div>
       </div>
     </section>
 
-    <section class="bg-custom-yellow text-black py-20 md:py-28 section-fade-in">
+    <section class="bg-custom-yellow text-black py-20 md:py-24 section-fade-in">
       <div class="container mx-auto text-center px-6">
-        <h2 class="text-3xl md:text-4xl font-bold mb-16">Our Core Features</h2>
+        <h2 class="text-3xl md:text-4xl font-bold mb-12">Our Core Features</h2>
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 md:gap-8">
-          <div class="bg-white p-8 rounded-xl shadow-xl hover:shadow-2xl transition-shadow duration-300 transform hover:-translate-y-1 flex flex-col items-center">
-            <svg class="w-16 h-16 mb-4 text-custom-yellow" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
-            <h3 class="text-2xl font-semibold mb-3">Transparent Pricing</h3>
+          <div class="bg-white p-8 rounded-xl shadow-xl hover:shadow-2xl transition-shadow duration-300 transform hover:-translate-y-1 flex flex-col items-center border border-gray-200">
+            <svg class="w-16 h-16 mb-4 text-gray-700" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+            <h3 class="text-2xl font-semibold mb-3 text-gray-900">Transparent Pricing</h3>
             <p class="text-gray-700 text-base leading-relaxed">Price parity across all clients means one consistent, high-quality service for everyone.</p>
           </div>
-          <div class="bg-white p-8 rounded-xl shadow-xl hover:shadow-2xl transition-shadow duration-300 transform hover:-translate-y-1 flex flex-col items-center">
-            <svg class="w-16 h-16 mb-4 text-custom-yellow" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
-            <h3 class="text-2xl font-semibold mb-3">Seamless Platform</h3>
+          <div class="bg-white p-8 rounded-xl shadow-xl hover:shadow-2xl transition-shadow duration-300 transform hover:-translate-y-1 flex flex-col items-center border border-gray-200">
+            <svg class="w-16 h-16 mb-4 text-gray-700" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
+            <h3 class="text-2xl font-semibold mb-3 text-gray-900">Seamless Platform</h3>
             <p class="text-gray-700 text-base leading-relaxed">Securely review submissions and book interviews directly through our online portal, or integrate with your existing ATS.</p>
           </div>
-          <div class="bg-white p-8 rounded-xl shadow-xl hover:shadow-2xl transition-shadow duration-300 transform hover:-translate-y-1 flex flex-col items-center">
-             <svg class="w-16 h-16 mb-4 text-custom-yellow" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path></svg>
-            <h3 class="text-2xl font-semibold mb-3">Work with Experts</h3>
+          <div class="bg-white p-8 rounded-xl shadow-xl hover:shadow-2xl transition-shadow duration-300 transform hover:-translate-y-1 flex flex-col items-center border border-gray-200">
+             <svg class="w-16 h-16 mb-4 text-gray-700" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z"></path></svg>
+            <h3 class="text-2xl font-semibold mb-3 text-gray-900">Work with Experts</h3>
             <p class="text-gray-700 text-base leading-relaxed">Our talent partners possess a strong, nuanced understanding of the tech industry. Consult us for insights and benchmarking.</p>
           </div>
-          <div class="bg-white p-8 rounded-xl shadow-xl hover:shadow-2xl transition-shadow duration-300 transform hover:-translate-y-1 flex flex-col items-center">
-            <svg class="w-16 h-16 mb-4 text-custom-yellow" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path></svg>
-            <h3 class="text-2xl font-semibold mb-3">Zero Risk</h3>
+          <div class="bg-white p-8 rounded-xl shadow-xl hover:shadow-2xl transition-shadow duration-300 transform hover:-translate-y-1 flex flex-col items-center border border-gray-200">
+            <svg class="w-16 h-16 mb-4 text-gray-700" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path></svg>
+            <h3 class="text-2xl font-semibold mb-3 text-gray-900">Zero Risk</h3>
             <p class="text-gray-700 text-base leading-relaxed">No upfront fees, no hidden costs, and we don't require exclusivity to get started.</p>
           </div>
         </div>
@@ -238,28 +234,28 @@
     </section>
   </main>
 
-  <footer class="bg-gray-900 text-gray-300 py-16">
+  <footer class="bg-white text-gray-700 py-16 border-t border-gray-200"> 
     <div class="container mx-auto text-center px-6">
       <a href="index.html">
-        <img src="https://raw.githubusercontent.com/twelvetalent/twelvetalent-site/refs/heads/main/TWELVE%20with%20logo%20no%20background.png" alt="Twelve Talent Logo - Footer" class="w-32 h-auto mx-auto mb-6 opacity-80"/>
+        <img src="https://raw.githubusercontent.com/twelvetalent/twelvetalent-site/refs/heads/main/TWELVE%20with%20logo%20no%20background.png" alt="Twelve Talent Logo - Footer" class="w-32 h-auto mx-auto mb-6"/> 
       </a>
       <div class="flex justify-center space-x-6 mb-8">
-        <a href="https://linkedin.com/company/twelvetalent" target="_blank" aria-label="LinkedIn" class="text-gray-400 hover:text-custom-yellow transition-colors">
+        <a href="https://linkedin.com/company/twelvetalent" target="_blank" aria-label="LinkedIn" class="text-gray-500 hover:text-custom-yellow transition-colors"> 
           <svg class="h-7 w-7 fill-current" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
         </a>
-        <a href="https://twitter.com/twelvetalent" target="_blank" aria-label="Twitter" class="text-gray-400 hover:text-custom-yellow transition-colors">
-          <svg class="h-7 w-7 fill-current" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M24 4.557c-.883.392-1.832.656-2.828.775 1.017-.609 1.798-1.574 2.165-2.724-.951.564-2.005.974-3.127 1.195-.897-.957-2.178-1.555-3.594-1.555-3.179 0-5.515 2.966-4.797 6.045-4.091-.205-7.719-2.165-10.148-5.144-.424.727-.666 1.62-.666 2.581 0 1.727.88 3.241 2.213 4.129-.816-.026-1.583-.25-2.257-.624v.059c0 2.418 1.717 4.434 3.987 4.898-.417.114-.858.174-1.314.174-.319 0-.626-.031-.925-.087.636 1.974 2.488 3.411 4.685 3.452-1.701 1.332-3.842 2.126-6.169 2.126-.402 0-.798-.023-1.188-.069 2.196 1.407 4.802 2.226 7.618 2.226 9.142 0 14.138-7.583 14.138-14.138 0-.215-.005-.428-.013-.638.97-.699 1.812-1.571 2.479-2.566z"/></svg>
+        <a href="https://twitter.com/twelvetalent" target="_blank" aria-label="X (formerly Twitter)" class="text-gray-500 hover:text-custom-yellow transition-colors"> 
+          <svg class="h-7 w-7 fill-current" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
         </a>
-        <a href="mailto:contact@twelvetalent.co" aria-label="Email" class="text-gray-400 hover:text-custom-yellow transition-colors">
-          <svg class="h-7 w-7 fill-current" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M0 3v18h24v-18h-24zm6.623 7.929l-6.623 5.712v-9.458l6.623 3.746zm-4.141-5.929h14.038l-7.019 5.865-7.019-5.865zm15.518 11.24l-6.623-5.712 6.623-3.746v9.458zm0-12.24l-7.019 5.865-7.019-5.865h14.038z"/></svg>
+        <a href="mailto:contact@twelvetalent.co" aria-label="Email" class="text-gray-500 hover:text-custom-yellow transition-colors"> 
+          <svg class="h-7 w-7 fill-current" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M22 6c0-1.1-.9-2-2-2H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6zm-2 0l-8 5-8-5h16zm0 12H4V8l8 5 8-5v10z"/></svg>
         </a>
       </div>
-      <div class="text-sm space-y-2 text-gray-500">
+      <div class="text-sm space-y-2 text-gray-600"> 
         <p>&copy; <span id="currentYear"></span> Twelve Group Limited. All Rights Reserved.</p>
         <div class="flex flex-wrap justify-center space-x-4 md:space-x-6">
-          <a href="terms.html" class="hover:text-custom-yellow custom-underline transition-colors">Terms of Service</a>
-          <a href="privacy.html" class="hover:text-custom-yellow custom-underline transition-colors">Privacy Policy</a>
-          <a href="cookie.html" class="hover:text-custom-yellow custom-underline transition-colors">Cookie Policy</a>
+          <a href="terms.html" class="text-gray-600 hover:text-custom-yellow custom-underline transition-colors">Terms of Service</a> 
+          <a href="privacy.html" class="text-gray-600 hover:text-custom-yellow custom-underline transition-colors">Privacy Policy</a> 
+          <a href="cookie.html" class="text-gray-600 hover:text-custom-yellow custom-underline transition-colors">Cookie Policy</a> 
         </div>
       </div>
     </div>
@@ -272,7 +268,6 @@
   
   hamburger.addEventListener('click', () => {
     mobileMenu.classList.toggle('hidden');
-    // Optional: Toggle ARIA attributes for accessibility
     const isExpanded = hamburger.getAttribute('aria-expanded') === 'true' || false;
     hamburger.setAttribute('aria-expanded', !isExpanded);
     mobileMenu.setAttribute('aria-hidden', isExpanded);
@@ -284,17 +279,15 @@
   // Simple Scroll Fade-in Effect for Sections
   const sections = document.querySelectorAll('.section-fade-in');
   const observerOptions = {
-    root: null, // relative to document viewport
+    root: null, 
     rootMargin: '0px',
-    threshold: 0.1 // trigger when 10% of the element is visible
+    threshold: 0.1 
   };
 
   const observer = new IntersectionObserver((entries, observer) => {
     entries.forEach(entry => {
       if (entry.isIntersecting) {
         entry.target.classList.add('visible');
-        // Optional: unobserve after it's visible to save resources
-        // observer.unobserve(entry.target); 
       }
     });
   }, observerOptions);
@@ -307,4 +300,3 @@
 
 </body>
 </html>
-```
