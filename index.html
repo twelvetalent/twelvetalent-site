@@ -76,7 +76,7 @@
       position: absolute;
       bottom: -4px; left: 0;
       width: 100%; height: 2px;
-      background: #0F172A;
+      background: #FFDE59;
       transform: scaleX(0);
       transform-origin: right;
       transition: transform 0.3s ease;
@@ -98,8 +98,8 @@
       100% { transform: translateX(-50%); }
     }
     .carousel-track img {
-      height: 36px;
-      margin: 0 32px;
+      height: 52px;
+      margin: 0 36px;
       object-fit: contain;
       opacity: 0.5;
       transition: opacity 0.3s;
@@ -238,8 +238,11 @@
 
 <body>
 
+  <!-- Yellow accent bar -->
+  <div class="h-1 bg-twelve fixed top-0 left-0 right-0 z-[60]" style="background:#FFDE59;"></div>
+
   <!-- ========== HEADER ========== -->
-  <header class="fixed top-0 left-0 right-0 z-50 bg-twelve border-b border-yellow-400/40" style="background:#FFDE59;">
+  <header class="fixed top-1 left-0 right-0 z-50 bg-white/95 backdrop-blur-md border-b border-border/50">
     <div class="max-w-7xl mx-auto px-6 flex items-center justify-between h-16 md:h-[72px]">
       <a href="index.html" class="flex-shrink-0">
         <img src="https://raw.githubusercontent.com/twelvetalent/twelvetalent-site/refs/heads/main/TWELVE%20with%20logo%20no%20background.png" alt="Twelve Talent" class="h-8 md:h-9 w-auto" />
@@ -250,7 +253,7 @@
         <a href="services.html" class="nav-link text-sm font-medium text-ink/70 hover:text-ink transition-colors">Services</a>
         <a href="platform.html" class="nav-link text-sm font-medium text-ink/70 hover:text-ink transition-colors">Platform</a>
         <a href="contact.html" class="nav-link text-sm font-medium text-ink/70 hover:text-ink transition-colors">Contact</a>
-        <a href="https://hub.twelvetalent.co/" class="text-sm font-semibold text-ink border border-ink/20 rounded-full px-5 py-2 hover:bg-ink hover:text-white transition-all">Log In</a>
+        <a href="https://hub.twelvetalent.co/" class="text-sm font-semibold text-ink border border-border rounded-full px-5 py-2 hover:border-twelve hover:bg-twelve/5 transition-all">Log In</a>
       </nav>
 
       <button id="hamburger" class="md:hidden p-2 -mr-2" aria-label="Toggle menu" aria-expanded="false">
@@ -260,13 +263,13 @@
       </button>
     </div>
 
-    <div id="mobile-menu" class="md:hidden border-t border-ink/10" style="background:#FFDE59;">
+    <div id="mobile-menu" class="md:hidden border-t border-border/50 bg-white">
       <nav class="flex flex-col px-6 py-4 gap-1">
-        <a href="index.html" class="py-3 text-sm font-medium text-ink/70 hover:text-ink border-b border-ink/10">Home</a>
-        <a href="services.html" class="py-3 text-sm font-medium text-ink/70 hover:text-ink border-b border-ink/10">Services</a>
-        <a href="platform.html" class="py-3 text-sm font-medium text-ink/70 hover:text-ink border-b border-ink/10">Platform</a>
-        <a href="contact.html" class="py-3 text-sm font-medium text-ink/70 hover:text-ink border-b border-ink/10">Contact</a>
-        <a href="https://hub.twelvetalent.co/" class="mt-2 text-center text-sm font-semibold text-white bg-ink rounded-full px-5 py-3 hover:bg-ink/80 transition-all">Log In</a>
+        <a href="index.html" class="py-3 text-sm font-medium text-ink/70 hover:text-ink border-b border-border/30">Home</a>
+        <a href="services.html" class="py-3 text-sm font-medium text-ink/70 hover:text-ink border-b border-border/30">Services</a>
+        <a href="platform.html" class="py-3 text-sm font-medium text-ink/70 hover:text-ink border-b border-border/30">Platform</a>
+        <a href="contact.html" class="py-3 text-sm font-medium text-ink/70 hover:text-ink border-b border-border/30">Contact</a>
+        <a href="https://hub.twelvetalent.co/" class="mt-2 text-center text-sm font-semibold text-ink border border-ink/20 rounded-full px-5 py-3 hover:bg-ink hover:text-white transition-all">Log In</a>
       </nav>
     </div>
   </header>
@@ -308,8 +311,8 @@
     <!-- ========== LOGO CAROUSEL ========== -->
     <section class="py-16 md:py-20 border-t border-border/50 reveal">
       <div class="max-w-7xl mx-auto px-6 mb-10">
-        <p class="text-center text-sm font-medium tracking-widest uppercase text-muted">Proven Experience</p>
-        <p class="text-center text-base text-muted mt-2 max-w-xl mx-auto">Our team have scaled orgs and made key hires for some of the industry's most notable tech brands.</p>
+        <h2 class="text-center text-base md:text-lg font-bold tracking-widest uppercase text-ink mb-3">Proven Experience</h2>
+        <p class="text-center text-lg md:text-xl text-ink/60 mt-2 max-w-2xl mx-auto leading-relaxed">Our team have scaled orgs and made key hires for some of the industry's most notable tech brands.</p>
       </div>
       <div class="overflow-hidden" aria-label="Client logos">
         <div class="carousel-track">
@@ -360,9 +363,9 @@
     <!-- ========== WHY TWELVE ========== -->
     <section class="py-20 md:py-28 bg-white border-t border-border/50">
       <div class="max-w-7xl mx-auto px-6">
-        <div class="max-w-2xl mb-16">
+        <div class="max-w-2xl mx-auto text-center mb-16">
           <h2 class="reveal font-heading font-bold text-4xl md:text-5xl text-ink mb-6">Twelve<span class="text-twelve">?</span></h2>
-          <div class="reveal reveal-delay-1 section-divider mb-6"></div>
+          <div class="reveal reveal-delay-1 section-divider mx-auto mb-6"></div>
           <p class="reveal reveal-delay-1 text-lg text-muted leading-relaxed">
             Backed by 30 years of combined experience across internal, agency, executive search, and consultancy we bridge the gap between rigid embedded models and expensive agencies.
           </p>
@@ -476,16 +479,9 @@
             <p class="text-muted text-sm font-medium tracking-widest uppercase mt-2">Fixed fee. Every client.</p>
           </div>
 
-          <p class="reveal reveal-delay-2 text-lg text-muted leading-relaxed mb-10 max-w-2xl mx-auto">
+          <p class="reveal reveal-delay-2 text-lg text-muted leading-relaxed max-w-2xl mx-auto">
             We believe in total transparency, not least with our pricing. A more efficient model means a fixed 12% fee to all clients; no upfront costs, no pushy negotiations, no favouritism, no second rate, just the same high quality service for everyone.
           </p>
-
-          <div class="reveal reveal-delay-3">
-            <a href="contact.html" class="btn-primary">
-              Get in touch
-              <svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
-            </a>
-          </div>
         </div>
       </div>
     </section>
