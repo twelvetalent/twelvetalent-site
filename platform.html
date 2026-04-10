@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="TwelveHub — our recruitment platform. Access everything, anywhere, anytime. Dashboard, live pipeline, collaboration, and more." />
+  <title>Twelve | Platform</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600&family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            twelve: '#FFDE59',
+            ink: '#0F172A',
+            surface: '#FAFAFA',
+            muted: '#64748B',
+            border: '#E2E8F0',
+          },
+          fontFamily: {
+            heading: ['Poppins', 'sans-serif'],
+            body: ['Archivo', 'sans-serif'],
+          },
+        }
+      }
+    }
+  </script>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Archivo', sans-serif; background: #FAFAFA; color: #0F172A; overflow-x: hidden; }
+    h1,h2,h3,h4,h5,h6 { font-family: 'Poppins', sans-serif; }
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(32px);
+      transition: opacity 0.7s cubic-bezier(.16,1,.3,1), transform 0.7s cubic-bezier(.16,1,.3,1);
+    }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+    .reveal-delay-1 { transition-delay: 0.1s; }
+    .reveal-delay-2 { transition-delay: 0.2s; }
+    .reveal-delay-3 { transition-delay: 0.3s; }
+    .reveal-delay-4 { transition-delay: 0.4s; }
+
+    .hero-word {
+      display: inline-block;
+      opacity: 0;
+      transform: translateY(60px);
+      filter: blur(8px);
+      animation: wordReveal 0.8s cubic-bezier(.16,1,.3,1) forwards;
+    }
+    @keyframes wordReveal {
+      to { opacity: 1; transform: translateY(0); filter: blur(0); }
+    }
+    .hero-fade {
+      opacity: 0;
+      transform: translateY(24px);
+      animation: heroFade 0.7s cubic-bezier(.16,1,.3,1) forwards;
+    }
+    @keyframes heroFade {
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .nav-link { position: relative; }
+    .nav-link::after {
+      content: '';
+      position: absolute;
+      bottom: -4px; left: 0;
+      width: 100%; height: 2px;
+      background: #FFDE59;
+      transform: scaleX(0);
+      transform-origin: right;
+      transition: transform 0.3s ease;
+    }
+    .nav-link:hover::after { transform: scaleX(1); transform-origin: left; }
+    .nav-active::after { transform: scaleX(1); }
+
+    .accent-dot {
+      display: inline-block;
+      width: 10px; height: 10px;
+      background: #FFDE59;
+      border-radius: 50%;
+      margin-left: 4px;
+      vertical-align: middle;
+    }
+
+    .btn-primary {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: #0F172A;
+      color: #fff;
+      padding: 14px 32px;
+      border-radius: 999px;
+      font-family: 'Poppins', sans-serif;
+      font-weight: 600;
+      font-size: 1rem;
+      text-decoration: none;
+      transition: all 0.3s cubic-bezier(.16,1,.3,1);
+      border: 1.5px solid transparent;
+    }
+    .btn-primary:hover {
+      background: #fff;
+      color: #0F172A;
+      border-color: #0F172A;
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(15,23,42,0.12);
+    }
+    .btn-primary svg { transition: transform 0.3s; }
+    .btn-primary:hover svg { transform: translateX(4px); }
+
+    .section-divider {
+      width: 64px;
+      height: 3px;
+      background: #FFDE59;
+      border-radius: 2px;
+    }
+
+    /* Screenshot frame */
+    .screenshot-frame {
+      background: #fff;
+      border: 1px solid #E2E8F0;
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 8px 32px rgba(15,23,42,0.08);
+      transition: all 0.4s cubic-bezier(.16,1,.3,1);
+    }
+    .screenshot-frame:hover {
+      box-shadow: 0 16px 48px rgba(15,23,42,0.12);
+      transform: translateY(-4px);
+    }
+    .screenshot-frame img {
+      width: 100%;
+      display: block;
+    }
+
+    /* Feature showcase alternating layout */
+    .showcase-row { display: grid; gap: 3rem; align-items: center; }
+    @media (min-width: 768px) {
+      .showcase-row { grid-template-columns: 1fr 1fr; gap: 4rem; }
+      .showcase-row.reverse .showcase-text { order: 2; }
+      .showcase-row.reverse .showcase-media { order: 1; }
+    }
+
+    /* Feature pill */
+    .feature-pill {
+      background: #fff;
+      border: 1px solid #E2E8F0;
+      border-radius: 12px;
+      padding: 16px 20px;
+      font-family: 'Poppins', sans-serif;
+      font-weight: 600;
+      font-size: 0.95rem;
+      color: #0F172A;
+      transition: all 0.3s cubic-bezier(.16,1,.3,1);
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .feature-pill:hover {
+      border-color: #FFDE59;
+      box-shadow: 0 4px 16px rgba(255,222,89,0.12);
+      transform: translateY(-2px);
+    }
+    .feature-pill .pill-icon {
+      width: 32px; height: 32px;
+      border-radius: 8px;
+      background: rgba(255,222,89,0.15);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    /* Badge */
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: #FFDE59;
+      color: #0F172A;
+      font-family: 'Poppins', sans-serif;
+      font-weight: 600;
+      font-size: 0.75rem;
+      padding: 4px 12px;
+      border-radius: 999px;
+      letter-spacing: 0.02em;
+    }
+
+    #mobile-menu {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.35s ease;
+    }
+    #mobile-menu.open { max-height: 400px; }
+
+    .hero-section::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.03'/%3E%3C/svg%3E");
+      pointer-events: none;
+      z-index: 0;
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Yellow accent bar -->
+  <div class="h-1 bg-twelve fixed top-0 left-0 right-0 z-[60]" style="background:#FFDE59;"></div>
+
+  <!-- ========== HEADER ========== -->
+  <header class="fixed top-1 left-0 right-0 z-50 bg-white/95 backdrop-blur-md border-b border-border/50">
+    <div class="max-w-7xl mx-auto px-6 flex items-center justify-between h-16 md:h-[72px]">
+      <a href="index.html" class="flex-shrink-0">
+        <img src="https://raw.githubusercontent.com/twelvetalent/twelvetalent-site/refs/heads/main/TWELVE%20with%20logo%20no%20background.png" alt="Twelve Talent" class="h-8 md:h-9 w-auto" />
+      </a>
+      <nav class="hidden md:flex items-center gap-8">
+        <a href="index.html" class="nav-link text-sm font-medium text-ink/70 hover:text-ink transition-colors">Home</a>
+        <a href="services.html" class="nav-link text-sm font-medium text-ink/70 hover:text-ink transition-colors">Services</a>
+        <a href="platform.html" class="nav-link nav-active text-sm font-medium text-ink transition-colors">Platform</a>
+        <a href="contact.html" class="nav-link text-sm font-medium text-ink/70 hover:text-ink transition-colors">Contact</a>
+        <a href="https://hub.twelvetalent.co/" class="text-sm font-semibold text-ink border border-border rounded-full px-5 py-2 hover:border-twelve hover:bg-twelve/5 transition-all">Log In</a>
+      </nav>
+      <button id="hamburger" class="md:hidden p-2 -mr-2" aria-label="Toggle menu" aria-expanded="false">
+        <svg class="w-6 h-6 text-ink" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 6h16M4 12h16M4 18h16"/>
+        </svg>
+      </button>
+    </div>
+    <div id="mobile-menu" class="md:hidden border-t border-border/50 bg-white">
+      <nav class="flex flex-col px-6 py-4 gap-1">
+        <a href="index.html" class="py-3 text-sm font-medium text-ink/70 hover:text-ink border-b border-border/30">Home</a>
+        <a href="services.html" class="py-3 text-sm font-medium text-ink/70 hover:text-ink border-b border-border/30">Services</a>
+        <a href="platform.html" class="py-3 text-sm font-semibold text-ink border-b border-border/30">Platform</a>
+        <a href="contact.html" class="py-3 text-sm font-medium text-ink/70 hover:text-ink border-b border-border/30">Contact</a>
+        <a href="https://hub.twelvetalent.co/" class="mt-2 text-center text-sm font-semibold text-ink border border-ink/20 rounded-full px-5 py-3 hover:bg-ink hover:text-white transition-all">Log In</a>
+      </nav>
+    </div>
+  </header>
+
+
+  <main>
+
+    <!-- ========== HERO ========== -->
+    <section class="hero-section relative min-h-[80vh] flex items-center pt-24 pb-16 md:pt-32 md:pb-24">
+      <div class="relative z-10 max-w-7xl mx-auto px-6 w-full text-center">
+        <div class="max-w-4xl mx-auto">
+          <div class="hero-fade mb-6" style="animation-delay:0.1s;">
+            <span class="badge">New — Live Collaboration</span>
+          </div>
+
+          <h1 class="font-heading font-extrabold text-ink leading-[0.95] tracking-tight text-5xl sm:text-6xl md:text-7xl lg:text-8xl mb-6">
+            <span class="hero-word" style="animation-delay:0.25s;">Twelve</span><span class="hero-word" style="animation-delay:0.4s;">Hub<span class="accent-dot"></span></span>
+          </h1>
+
+          <p class="hero-fade text-lg md:text-xl text-muted max-w-lg mx-auto leading-relaxed mb-12" style="animation-delay:0.65s;">
+            Access everything, anywhere, anytime.
+          </p>
+
+          <div class="hero-fade max-w-4xl mx-auto" style="animation-delay:0.85s;">
+            <div class="screenshot-frame">
+              <img src="https://umsousercontent.com/lib_MeASmRnviYgijZcI/1y5r5itmtlgprsyd.png?w=700&dpr=2" alt="TwelveHub platform screenshot" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ========== THE PLATFORM ========== -->
+    <section class="py-20 md:py-28 bg-white border-t border-border/50">
+      <div class="max-w-3xl mx-auto px-6 text-center">
+        <h2 class="reveal font-heading font-bold text-4xl md:text-5xl text-ink mb-6">The Platform<span class="accent-dot"></span></h2>
+        <div class="reveal reveal-delay-1 section-divider mx-auto mb-10"></div>
+        <p class="reveal reveal-delay-1 text-lg md:text-xl text-muted leading-relaxed">
+          Our founding team have extensive experience leading in-house talent functions, executive search and agency recruitment. We took knowledge from all angles, stripped back the entire recruitment lifecycle, and rebuilt it with a focus on efficiency, transparency and quality — a key driver of this improved process is our platform.
+        </p>
+      </div>
+    </section>
+
+
+    <!-- ========== FEATURE SHOWCASES ========== -->
+    <section class="py-20 md:py-28 border-t border-border/50">
+      <div class="max-w-7xl mx-auto px-6 space-y-24 md:space-y-32">
+
+        <!-- Dashboard -->
+        <div class="showcase-row reveal">
+          <div class="showcase-text">
+            <h3 class="font-heading font-bold text-3xl md:text-4xl text-ink mb-4">Dashboard<span class="accent-dot"></span></h3>
+            <div class="section-divider mb-6"></div>
+            <p class="text-lg text-muted leading-relaxed">
+              Get an instant snapshot of activity and a realtime actionable to-do list.
+            </p>
+          </div>
+          <div class="showcase-media">
+            <div class="screenshot-frame">
+              <img src="https://umsousercontent.com/lib_MeASmRnviYgijZcI/if93opatum0m3gst.png?w=800&h=800&dpr=2" alt="TwelveHub dashboard view" />
+            </div>
+          </div>
+        </div>
+
+        <!-- Live Pipeline -->
+        <div class="showcase-row reverse reveal">
+          <div class="showcase-text">
+            <h3 class="font-heading font-bold text-3xl md:text-4xl text-ink mb-4">Live Pipeline<span class="accent-dot"></span></h3>
+            <div class="section-divider mb-6"></div>
+            <p class="text-lg text-muted leading-relaxed">
+              See candidate progress in a list or board view.
+            </p>
+          </div>
+          <div class="showcase-media">
+            <div class="screenshot-frame">
+              <img src="https://umsousercontent.com/lib_MeASmRnviYgijZcI/bkbg7jcn6lypq4ji.gif?w=800&h=800&dpr=2" alt="TwelveHub live pipeline view" />
+            </div>
+          </div>
+        </div>
+
+        <!-- Collaborate -->
+        <div class="showcase-row reveal">
+          <div class="showcase-text">
+            <h3 class="font-heading font-bold text-3xl md:text-4xl text-ink mb-4">Collaborate<span class="accent-dot"></span></h3>
+            <div class="section-divider mb-6"></div>
+            <p class="text-lg text-muted leading-relaxed">
+              Review and download CVs, post feedback, notes, star ratings, progress to next stage and request interviews.
+            </p>
+          </div>
+          <div class="showcase-media">
+            <div class="screenshot-frame">
+              <img src="https://umsousercontent.com/lib_MeASmRnviYgijZcI/e7fy2rzph2ksh1yh.gif?w=800&h=800&dpr=2" alt="TwelveHub collaboration features" />
+            </div>
+          </div>
+        </div>
+
+        <!-- Multiple Jobs -->
+        <div class="showcase-row reverse reveal">
+          <div class="showcase-text">
+            <h3 class="font-heading font-bold text-3xl md:text-4xl text-ink mb-4">Multiple Jobs?<span class="accent-dot"></span></h3>
+            <div class="section-divider mb-6"></div>
+            <p class="text-lg text-muted leading-relaxed">
+              No problem. Collaborate with all hiring stakeholders, manage job access and hide salary data.
+            </p>
+          </div>
+          <div class="showcase-media">
+            <div class="screenshot-frame">
+              <img src="https://umsousercontent.com/lib_MeASmRnviYgijZcI/lcycebidc34yzv82.png?w=800&h=800&dpr=2" alt="TwelveHub multiple jobs view" />
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- ========== FEATURES GRID ========== -->
+    <section class="py-20 md:py-28 bg-white border-t border-border/50">
+      <div class="max-w-7xl mx-auto px-6">
+        <div class="text-center mb-16">
+          <h2 class="reveal font-heading font-bold text-4xl md:text-5xl text-ink mb-4">Features<span class="accent-dot"></span></h2>
+          <div class="reveal reveal-delay-1 section-divider mx-auto mb-6"></div>
+          <p class="reveal reveal-delay-1 text-lg text-muted">We're constantly adding new features and welcome any suggestions.</p>
+        </div>
+
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+          <div class="reveal reveal-delay-1 feature-pill">
+            <div class="pill-icon"><svg class="w-4 h-4 text-ink" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg></div>
+            Interview Calendar
+          </div>
+          <div class="reveal reveal-delay-1 feature-pill">
+            <div class="pill-icon"><svg class="w-4 h-4 text-ink" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"/></svg></div>
+            Individual client logins
+          </div>
+          <div class="reveal reveal-delay-2 feature-pill">
+            <div class="pill-icon"><svg class="w-4 h-4 text-ink" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"/></svg></div>
+            Manage job visibility
+          </div>
+          <div class="reveal reveal-delay-2 feature-pill">
+            <div class="pill-icon"><svg class="w-4 h-4 text-ink" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M13.875 18.825A10.05 10.05 0 0112 19c-4.478 0-8.268-2.943-9.543-7a9.97 9.97 0 011.563-3.029m5.858.908a3 3 0 114.243 4.243M9.878 9.878l4.242 4.242M9.88 9.88l-3.29-3.29m7.532 7.532l3.29 3.29M3 3l3.59 3.59m0 0A9.953 9.953 0 0112 5c4.478 0 8.268 2.943 9.543 7a10.025 10.025 0 01-4.132 5.411m0 0L21 21"/></svg></div>
+            Hide salary data
+          </div>
+          <div class="reveal reveal-delay-3 feature-pill">
+            <div class="pill-icon"><svg class="w-4 h-4 text-ink" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/></svg></div>
+            Download CVs
+          </div>
+          <div class="reveal reveal-delay-3 feature-pill">
+            <div class="pill-icon"><svg class="w-4 h-4 text-ink" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"/></svg></div>
+            Request Interviews
+          </div>
+          <div class="reveal reveal-delay-3 feature-pill">
+            <div class="pill-icon"><svg class="w-4 h-4 text-ink" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M6 18L18 6M6 6l12 12"/></svg></div>
+            Reject candidates
+          </div>
+          <div class="reveal reveal-delay-4 feature-pill">
+            <div class="pill-icon"><svg class="w-4 h-4 text-ink" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M7 8h10M7 12h4m1 8l-4-4H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-3l-4 4z"/></svg></div>
+            Give feedback
+          </div>
+          <div class="reveal reveal-delay-4 feature-pill">
+            <div class="pill-icon"><svg class="w-4 h-4 text-ink" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4"/></svg></div>
+            Live to-do list
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <!-- ========== CTA ========== -->
+    <section class="py-20 md:py-24 bg-surface border-t border-border/50">
+      <div class="max-w-7xl mx-auto px-6 text-center">
+        <h2 class="reveal font-heading font-bold text-3xl md:text-4xl text-ink mb-4">Want to supercharge your hiring?</h2>
+        <div class="reveal reveal-delay-1 mt-8">
+          <a href="contact.html" class="btn-primary">
+            Get Started
+            <svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+          </a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+
+  <!-- ========== FOOTER ========== -->
+  <footer class="bg-ink text-white/60 py-16 border-t border-white/5">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-10 md:gap-8 mb-12">
+        <div class="md:col-span-1">
+          <img src="https://raw.githubusercontent.com/twelvetalent/twelvetalent-site/refs/heads/main/TWELVE%20with%20logo%20no%20background.png" alt="Twelve Talent" class="h-8 w-auto brightness-0 invert mb-4" />
+          <p class="text-sm leading-relaxed text-white/40">Tech recruitment, built differently.</p>
+        </div>
+        <div>
+          <h4 class="font-heading font-semibold text-white text-sm tracking-wider uppercase mb-4">Company</h4>
+          <nav class="flex flex-col gap-2">
+            <a href="index.html" class="text-sm text-white/50 hover:text-twelve transition-colors">Home</a>
+            <a href="services.html" class="text-sm text-white/50 hover:text-twelve transition-colors">Services</a>
+            <a href="platform.html" class="text-sm text-white/50 hover:text-twelve transition-colors">Platform</a>
+            <a href="contact.html" class="text-sm text-white/50 hover:text-twelve transition-colors">Contact</a>
+            <a href="https://hub.twelvetalent.co/" class="text-sm text-white/50 hover:text-twelve transition-colors">Login</a>
+          </nav>
+        </div>
+        <div>
+          <h4 class="font-heading font-semibold text-white text-sm tracking-wider uppercase mb-4">Legal</h4>
+          <nav class="flex flex-col gap-2">
+            <a href="privacy-policy.html" class="text-sm text-white/50 hover:text-twelve transition-colors">Privacy Policy</a>
+            <a href="cookie-policy.html" class="text-sm text-white/50 hover:text-twelve transition-colors">Cookie Policy</a>
+          </nav>
+        </div>
+        <div>
+          <h4 class="font-heading font-semibold text-white text-sm tracking-wider uppercase mb-4">Connect</h4>
+          <div class="flex gap-4">
+            <a href="https://linkedin.com/company/twelvetalent" target="_blank" rel="noopener" aria-label="LinkedIn" class="w-9 h-9 rounded-full border border-white/10 flex items-center justify-center hover:border-twelve hover:text-twelve transition-all">
+              <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+            </a>
+            <a href="https://twitter.com/twelvetalent" target="_blank" rel="noopener" aria-label="X (formerly Twitter)" class="w-9 h-9 rounded-full border border-white/10 flex items-center justify-center hover:border-twelve hover:text-twelve transition-all">
+              <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+            </a>
+            <a href="mailto:contact@twelvetalent.co" aria-label="Email" class="w-9 h-9 rounded-full border border-white/10 flex items-center justify-center hover:border-twelve hover:text-twelve transition-all">
+              <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M22 6c0-1.1-.9-2-2-2H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6zm-2 0l-8 5-8-5h16zm0 12H4V8l8 5 8-5v10z"/></svg>
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="pt-8 border-t border-white/10 text-center">
+        <p class="text-xs text-white/30">&copy; 2025 Twelve Group Limited. All Rights Reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+
+  <script>
+    const hamburger = document.getElementById('hamburger');
+    const mobileMenu = document.getElementById('mobile-menu');
+    hamburger.addEventListener('click', () => {
+      const open = mobileMenu.classList.toggle('open');
+      hamburger.setAttribute('aria-expanded', open);
+    });
+
+    const revealObserver = new IntersectionObserver((entries) => {
+      entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); } });
+    }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+    document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+  </script>
+
+</body>
+</html>
