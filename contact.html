@@ -1,0 +1,859 @@
+
+
+<!DOCTYPE html> <html lang="en"> <head> <meta charset="UTF-8" /> <meta name="viewport" content="width=device-width, initial-scale=1.0" /> <meta name="description" content="Twelve Talent is a tech recruitment agency built by people who’ve run talent at some of Europe’s most successful startups.
+
+pasted
+
+I want to rebuild our website - twelvetalent.co
+
+I think it needs to look more modern, slick, updated. I like the look of Ashby's site
+
+https://www.ashbyhq.com/
+
+I have a Github account, so can put the code in there
+
+Some materials for reference 
+
+https://github.com/twelvetalent/twelvetalent-site/tree/main
+
+twelve yello logo, path: TWELVE with logo no background.png
+
+I have this index attached, but it is a play on github from 11 months, we've been using umso and thinking about moving away to github if we can get AI to build us a slick clean site. 
+
+So I would like a fresh index to push onto github and see what you can do on one try. 
+
+Can you ask me what other information you need
+Once you have this can you give me a really precise prompt to ensure we get everything we need in one build
+Show more
+09:41
+
+Thought for 1s
+Thought for 1s
+Let me check out Ashby's site first to understand the aesthetic you're going for.
+
+
+Identified design reference and prepared to gather comprehensive project requirements
+Identified design reference and prepared to gather comprehensive project requirements
+Great, I can see the Ashby aesthetic — clean, minimal, confident typography, lots of whitespace, subtle animations, dark/light contrast. Let me ask you a few things to make sure we nail this in one go.
+
+Q: What pages do you need built right now? (We can always add more later)
+A: Just the homepage (index.html)
+
+Q: Do you want to keep the yellow (
+#FFDE59) brand colour, or are you open to a refresh?
+A: Open to suggestions
+
+Q: What should the primary CTA (call-to-action) button do?
+A: Link to a contact page/form
+
+09:41
+
+Synthesized user responses to craft targeted design brief
+Synthesized user responses to craft targeted design brief
+A few more quick ones:
+
+Q: The current site has client logos (Monzo, BBC, Skyscanner etc.) and stats (193 clients, 655 hires etc.) — keep these?
+A: Yes, keep them all
+
+Q: Do you have any client testimonials or quotes you'd want on the homepage?
+A: No, skip for now
+
+Q: What about the written content — keep it, rewrite it, or provide your own?
+A: Keep the copy from twelvetalent.co rather than the github page
+
+09:42
+
+Thought for 1s
+Thought for 1s
+Let me grab the live copy from your current site first.
+
+
+Synthesized client feedback into cohesive homepage strategy
+Synthesized client feedback into cohesive homepage strategy
+Got it all. Here's a precise, copy-paste-ready prompt you can use (in this conversation or a fresh one) to get the full homepage built in one shot:
+
+Prompt to build the site:
+
+Build me a single index.html file for Twelve Talent (twelvetalent.co) — a tech recruitment agency. This will be hosted on GitHub Pages. The file must be entirely self-contained (inline CSS/JS, no separate files). Use Google Fonts loaded via CDN and Tailwind via CDN script tag.
+
+Design direction: Inspired by ashbyhq.com — clean, modern, confident. Generous whitespace, large bold typography, smooth scroll-triggered fade-in animations. No clutter, no stock illustration vibes. It should feel like a premium SaaS site, not a recruitment agency template.
+
+Colour palette: Move away from heavy yellow. Use a refined palette: off-white/light grey background (
+#FAFAFA or similar), near-black text (
+#0F172A), and use the Twelve yellow (
+#FFDE59) only as a subtle accent (underlines, small highlights, hover states) — not as full-section backgrounds. Aim for an Ashby-like restraint.
+
+Fonts: Headings: Poppins (700/800 weight). Body: Archivo (400/500).
+
+Logo: Use this URL for the logo everywhere: https://raw.githubusercontent.com/twelvetalent/twelvetalent-site/refs/heads/main/TWELVE%20with%20logo%20no%20background.png
+
+Navigation: Sticky header with logo left, nav links right: Home, Services, Platform, Contact, Log In. "Log In" links to https://hub.twelvetalent.co/. Mobile hamburger menu. Clean, minimal — similar to Ashby's nav.
+
+Sections (in order):
+
+Hero — Large headline: "Technology Talent." Subtitle: "Engineering, AI, Web3, Product, Exec Search". Brief paragraph: tech recruitment agency built by people who've run talent at Europe's most successful startups. CTA button linking to contact.html ("Get Started"). No illustration — just clean typography on a light background.
+Logo carousel — Heading: "Proven Experience" / subtext: "Our team have scaled orgs and made key hires for some of the industry's most notable tech brands." Infinite scrolling logo carousel using these existing image URLs from the live site (umsousercontent.com links):
+Sainsburys, Tesco, Just Eat, Gousto, Improbable, Home Office, DWP, Monzo, MoonPay, BBC, DAZN, Lastminute, Expedia, Booking, Skyscanner, Trainline, 101 Ways, Equal Experts, Checkout.com (Use the exact umsousercontent.com URLs from the current twelvetalent.co site.)
+Why Twelve — Heading: "Twelve?" Copy from the live site: "Backed by 30 years of combined experience across internal, agency, executive search, and consultancy we bridge the gap between rigid embedded models and expensive agencies." Then the three differentiators: "No rigid commitments", "Precision over volume", "Seamless alignment" — each with their descriptions from the live site. Present as a clean grid or card layout.
+Our Values — Three values in a row/grid: Transparent, Targeted, Timely — with descriptions from the live site.
+Stats section — "By the Numbers": 193 Happy Clients, 655 Perm Hires, 630 Contract Hires, 33% Indicative Cost Saving. Use a clean counter-style layout, animated count-up on scroll.
+Fair Pricing — Heading: "Fair Pricing." Copy: "We believe in total transparency, not least with our pricing. A more efficient model means a fixed 12% fee to all clients; no upfront costs, no pushy negotiations, no favouritism, no second rate, just the same high quality service for everyone." Make the "12%" visually prominent. CTA: "Get in touch" linking to contact.html.
+Footer — Logo, nav links (Home, Services, Platform, Contact, Login), legal links (Privacy Policy, Cookie Policy), social icons (LinkedIn: linkedin.com/company/twelvetalent, X/Twitter: twitter.com/twelvetalent, email: contact@twelvetalent.co). Copyright: "© 2025 Twelve Group Limited."
+Technical requirements:
+
+All in one HTML file, no external JS/CSS files
+Smooth scroll-triggered section fade-ins (IntersectionObserver)
+Logo carousel: infinite scroll, pause on hover, duplicated track for seamless loop
+Stats: animated count-up when section scrolls into view
+Fully responsive (mobile-first)
+Semantic HTML, accessible (aria labels, alt text)
+No placeholder images — use the real logo and client logo URLs listed above
+Want me to go ahead and build this now, or do you want to tweak the prompt first?
+
+Build me a single index.html file for Twelve Talent (twelvetalent.co) — a tech recruitment agency. This will be hosted on GitHub Pages. The file must be entirely self-contained (inline CSS/JS, no separate files). Use Google Fonts loaded via CDN and Tailwind via CDN script tag.
+Design direction: Inspired by ashbyhq.com — clean, modern, confident. Generous whitespace, large bold typography, smooth scroll-triggered fade-in animations. No clutter, no stock illustration vibes. It should feel like a premium SaaS site, not a recruitment agency template.
+Colour palette: Move away from heavy yellow. Use a refined palette: off-white/light grey background (#FAFAFA or similar), near-black text (#0F172A), and use the Twelve yellow (#FFDE59) only as a subtle accent (underlines, small highlights, hover states) — not as full-section backgrounds. Aim for an Ashby-like restraint.
+Fonts: Headings: Poppins (700/800 weight). Body: Archivo (400/500).
+Logo: Use this URL for the logo everywhere: https://raw.githubusercontent.com/twelvetalent/twelvetalent-site/refs/heads/main/TWELVE%20with%20logo%20no%20background.png
+Navigation: Sticky header with logo left, nav links right: Home, Services, Platform, Contact, Log In. "Log In" links to https://hub.twelvetalent.co/. Mobile hamburger menu. Clean, minimal — similar to Ashby's nav.
+Sections (in order):
+1. Hero — Large headline: "Technology Talent." Subtitle: "Engineering, AI, Web3, Product, Exec Search". Brief paragraph: tech recruitment agency built by people who've run talent at Europe's most successful startups. CTA button linking to contact.html ("Get Started"). No illustration — just clean typography on a light background.
+2. Logo carousel — Heading: "Proven Experience" / subtext: "Our team have scaled orgs and made key hires for some of the industry's most notable tech brands." Infinite scrolling logo carousel using these existing image URLs from the live site (umsousercontent.com links):
+   * Sainsburys, Tesco, Just Eat, Gousto, Improbable, Home Office, DWP, Monzo, MoonPay, BBC, DAZN, Lastminute, Expedia, Booking, Skyscanner, Trainline, 101 Ways, Equal Experts, Checkout.com (Use the exact umsousercontent.com URLs from the current twelvetalent.co site.)
+3. Why Twelve — Heading: "Twelve?" Copy from the live site: "Backed by 30 years of combined experience across internal, agency, executive search, and consultancy we bridge the gap between rigid embedded models and expensive agencies." Then the three differentiators: "No rigid commitments", "Precision over volume", "Seamless alignment" — each with their descriptions from the live site. Present as a clean grid or card layout.
+4. Our Values — Three values in a row/grid: Transparent, Targeted, Timely — with descriptions from the live site.
+5. Stats section — "By the Numbers": 193 Happy Clients, 655 Perm Hires, 630 Contract Hires, 33% Indicative Cost Saving. Use a clean counter-style layout, animated count-up on scroll.
+6. Fair Pricing — Heading: "Fair Pricing." Copy: "We believe in total transparency, not least with our pricing. A more efficient model means a fixed 12% fee to all clients; no upfront costs, no pushy negotiations, no favouritism, no second rate, just the same high quality service for everyone." Make the "12%" visually prominent. CTA: "Get in touch" linking to contact.html.
+7. Footer — Logo, nav links (Home, Services, Platform, Contact, Login), legal links (Privacy Policy, Cookie Policy), social icons (LinkedIn: linkedin.com/company/twelvetalent, X/Twitter: twitter.com/twelvetalent, email: contact@twelvetalent.co). Copyright: "© 2025 Twelve Group Limited."
+Technical requirements:
+* All in one HTML file, no external JS/CSS files
+* Smooth scroll-triggered section fade-ins (IntersectionObserver)
+* Logo carousel: infinite scroll, pause on hover, duplicated track for seamless loop
+* Stats: animated count-up when section scrolls into view
+* Fully responsive (mobile-first)
+* Semantic HTML, accessible (aria labels, alt text)
+* No placeholder images — use the real logo and client logo URLs listed above
+
+Show more
+09:43
+
+Architected comprehensive single-file website build
+Architected comprehensive single-file website build
+Now let me build the site. This is a substantial file so I'll create it iteratively.
+
+
+Architected premium recruitment agency landing page with refined design system
+Architected premium recruitment agency landing page with refined design system
+Here's your new homepage. Key design choices:
+
+Restrained palette — off-white background, near-black text, yellow only as accent dots, icon backgrounds, and hover states (no yellow section backgrounds)
+Ashby-inspired nav — frosted glass sticky header with backdrop blur, clean pill-style Login button
+Big confident hero — oversized Poppins type, staggered fade-in animations, no illustration clutter
+Greyscale logo carousel — logos start muted/greyscale and colour up on hover, infinite CSS animation with duplicate track
+Dark stats section — breaks the page rhythm like Ashby does, with animated count-up numbers on scroll
+12% pricing — large gradient text for the fee, making it the visual anchor of the section
+Smooth reveals — every section uses IntersectionObserver with staggered delays
+The file is fully self-contained and ready to push straight to your GitHub repo. Just drop it in as index.html.
+
+Index
+Code · HTML 
+I think I'd like Yellow to still be the predominant colour on the header. Could you enable that, whilst ensuring the remainder of the site then doesnt look weird.
+
+09:47
+
+Calibrating yellow accents throughout site subtly
+Calibrating yellow accents throughout site subtly
+Updated — the header and mobile menu are now solid Twelve yellow, with dark text and a dark Login pill that inverts on hover. The rest of the site stays clean on light/white backgrounds, so the yellow header acts as a strong brand anchor at the top without clashing with the sections below. The yellow accent dots, icon backgrounds, and hover states throughout the page tie back to the header colour for cohesion.
+
+Index
+Code · HTML 
+I feel the first line, Technology Talent. Should be centered. I dont love the phrase, perhaps it could be a tag line - make some suggestions. And I would like it to flow in like the Ashby site does so its attention grabbing when the home page opens
+
+09:49
+
+Thought for 1s
+Thought for 1s
+Here are some tagline directions to replace "Technology Talent." — pick the one that feels right:
+
+Q: Which tagline direction feels most like Twelve?
+A: A better solution to hiring
+
+09:50
+
+Thinking about identifying which tagline direction aligns with "Twelve" brand characteristics
+Thinking about identifying which tagline direction aligns with "Twelve" brand characteristics
+Love it. Let me centre the hero, use that tagline, and add a staggered word-by-word reveal animation like Ashby's.
+
+
+Orchestrated visual animation and refined messaging strategy
+Orchestrated visual animation and refined messaging strategy
+Now let me add the animation CSS and update the hero:
+
+
+Evaluated tagline alignment with brand identity
+Evaluated tagline alignment with brand identity
+Here's what changed:
+
+Centred hero — everything in the hero is now centred with a wider max-width
+"A better solution to hiring." — your tagline, with each word animating in individually with a staggered blur-to-sharp, slide-up reveal (like Ashby's entrance)
+Timed sequence — subtitle fades in first (0.1s), then each word of the headline cascades in (0.3s–0.78s), then the paragraph (1.1s), then the CTAs (1.35s) — so it feels like a choreographed reveal when the page loads
+Index
+Code · HTML 
+How do I deploy it again on github?
+
+09:52
+
+Synthesized GitHub Pages deployment procedures
+Synthesized GitHub Pages deployment procedures
+Assuming you already have the repo twelvetalent/twelvetalent-site:
+
+Drop the file in — replace the existing index.html in your repo with this new one (you can do it right in the GitHub UI: open the file, click the pencil icon, paste the new code, commit)
+Enable GitHub Pages (if not already):
+Go to Settings → Pages
+Under "Source", select Deploy from a branch
+Pick main branch, / (root) folder
+Hit Save
+Your site will be live at https://twelvetalent.github.io/twelvetalent-site/ within a minute or two.
+To use your custom domain (twelvetalent.co): on the same Settings → Pages screen, enter twelvetalent.co under "Custom domain", then add a CNAME record with your DNS provider pointing twelvetalent.co → twelvetalent.github.io.
+The quickest path is just going to your repo on GitHub, clicking index.html, hitting "Edit", selecting all, pasting the new code, and committing. Done.
+
+1775827281708_image.png
+Quick changes, 
+* Proven Experience copy. 
+   * This feels pretty hidden, like its too far in the background. Could we make this stand out - you can see what I mean from the attached image
+* Twelve?
+   * Can we centre this? Before you commit a change can you confirm why you made this design choice?
+
+14:22
+
+Identified two design refinements: elevating visibility and seeking approval beforehand
+Identified two design refinements: elevating visibility and seeking approval beforehand
+Good eye on the "Proven Experience" — the muted grey text is too washed out. I'll make the heading and subtext darker and bolder so they read clearly.
+
+On centering "Twelve?" — I left-aligned it deliberately because the section has an asymmetric layout: the heading and intro paragraph sit on the left as an anchor, then the three cards fill the full width below. This creates a visual hierarchy where your eye reads the heading first, then scans the cards — similar to how Ashby structures their feature sections. Centering it would work too, but it'd shift the feel from "editorial/confident" to "corporate/symmetrical."
+
+That said, since the hero and values sections are already centred, centering "Twelve?" would give the page more consistency. Want me to go ahead and centre it?
+
+Yes make those changes please
+
+14:22
+
+Orchestrated layout adjustment for section centering
+Orchestrated layout adjustment for section centering
+Two changes made:
+
+Proven Experience — heading is now bold dark text (text-ink) instead of the washed-out muted grey, and the subtext is darker too so it reads clearly against the background
+Twelve? — heading, divider, and intro paragraph are all centred now, consistent with the hero and values sections
+Index
+Code · HTML 
+1775827445731_image.png
+The proven experience seems very small. Too small to be readable, make it bigger
+
+14:24
+
+Identified sizing issues and proposed enlargement solutions
+Identified sizing issues and proposed enlargement solutions
+Also bumping the logos up — they're only 36px tall right now which is tiny:
+
+
+Edited a file, ran a command, read a file
+Edited a file, ran a command, read a file
+Scaled up both the text and the logos — heading is now text-lg/text-xl on desktop, subtext is text-lg/text-xl with more breathing room, and logos went from 36px to 52px tall. Should read much more clearly now.
+
+Index
+Code · HTML 
+Lets remove the Get in Touch button, its replicated on the tile below it with Let's talk
+
+14:25
+
+Identified redundant button and streamlined layout spacing
+Identified redundant button and streamlined layout spacing
+Done — the "Get in touch" button is removed from the Fair Pricing section. The "Let's Talk" CTA in the section below now serves as the single call-to-action for that part of the page.
+
+Index
+Code · HTML 
+1775827569844_image.png
+The Twelve Logo is faded into the yellow background, what are your suggestions from a design perspective to make this work?
+
+14:27
+
+Weighed contrast solutions for logo visibility on yellow
+Weighed contrast solutions for logo visibility on yellow
+A few options:
+
+The core problem is the dark logo on the saturated yellow doesn't have enough contrast. Each option solves it differently — the white header with a yellow accent bar is the cleanest and most "Ashby-like," while the pill keeps the full yellow header you wanted. What feels right?
+
+Q: The dark logo gets lost on the yellow. Which fix appeals most?
+A: White header with yellow accent bar on top
+
+14:28
+
+Refined mobile menu styling to complement design solution
+Refined mobile menu styling to complement design solution
+Done — the header is now clean white with a frosted glass backdrop blur, and a bold yellow accent bar sits fixed across the very top of the page. The logo reads clearly now, and the yellow brand colour still leads the eye. Nav underlines are back to yellow on hover to tie it together.
+
+Index
+Code · HTML 
+Okay now lets rebuild the https://twelvetalent.co/services page but with this style
+
+Lets keep the images, the copy, but bring a consistent style. Header footer etc.
+
+14:31
+
+Extracted assets and architected consistent services page redesign
+Extracted assets and architected consistent services page redesign
+Got the content. Let me build the services page with the same design system.
+
+
+Acknowledged request to redesign services page cohesively
+Acknowledged request to redesign services page cohesively
+Here's your services page. It shares the same design system as the homepage — same header with yellow accent bar, same footer, same reveal animations, same typography and colour palette. Key layout choices:
+
+Hero — split layout with the tagline left and your existing illustration right, word-by-word reveal animation
+Expertise cards — 4-column grid with the original images, hover lift + yellow border + subtle image zoom
+Our Approach — clean centred prose, same divider treatment as the homepage sections
+CTA — dark section with a yellow "Get Started" button (inverts to white on hover) for contrast and visual punch
+Active nav state — "Services" link has the yellow underline active so users know where they are
+Drop it into your repo alongside index.html.
+
+Services
+Code · HTML 
+Increase the hero image, its too faded in the background, dont worry about quality of the image resolution we can fix that later. 
+
+Something We can help with, dont like that being a background of blue, should keep consistent with the home page.
+
+14:35
+
+Recalibrated call-to-action styling for homepage consistency
+Recalibrated call-to-action styling for homepage consistency
+Done — hero image is now larger (max-w-lg / xl:max-w-xl instead of max-w-md), and the "Something we can help with?" section now uses the same light background with dark button as the homepage CTA.
+
+Services
+Code · HTML 
+Now do https://twelvetalent.co/platform
+
+14:37
+
+Acknowledged the request to navigate external platform
+Acknowledged the request to navigate external platform
+Here's your platform page. Same design system throughout — key layout choices:
+
+Hero — centred "TwelveHub" with word reveal animation, a yellow "New — Live Collaboration" badge, and the main screenshot in a framed card with hover lift
+Feature showcases — alternating left/right layout for Dashboard, Live Pipeline, Collaborate, and Multiple Jobs, each with their screenshot/gif in a subtle shadow frame
+Features grid — 9 features displayed as pill-style cards with yellow-tinted icons, hover effects with yellow border
+CTA — consistent light background with the same "Get Started" button style as the other pages
+All three pages now share the same header, footer, nav, animations, and colour palette. Ready to push alongside index.html and services.html.
+
+Platform
+Code · HTML 
+Now make a contact page
+
+https://twelvetalent.co/contact
+
+14:41
+
+Expedited contact page creation request
+Expedited contact page creation request
+Here's your contact page. Layout highlights:
+
+Hero — split layout: left side has the animated "Get in touch" headline with email and LinkedIn contact details, right side has the form in a clean bordered card
+Form — styled inputs with yellow focus rings, phone and LinkedIn side-by-side on desktop, full-width submit button
+Founders — Ben and Matt's bios in hover-lift cards with circular photos, yellow border, and LinkedIn links
+Join Us — light CTA section with a "Say Hello" mailto button
+One note: the form is purely front-end right now (no backend). Once you're ready to make it functional, you can hook it up to a service like Formspree by just adding action="https://formspree.io/f/your-id" and method="POST" — takes about 2 minutes.
+
+You now have all four pages ready to push: index.html, services.html, platform.html, and contact.html.
+
+Contact
+Code · HTML 
+Lets make the LinkedIn blue - the LinkedIn blue
+
+I'm wondering whether the text about founders is just a bit hidden / overly detailed, how would you change that?
+
+14:45
+
+Devised visual enhancements for LinkedIn branding and founder presentation
+Devised visual enhancements for LinkedIn branding and founder presentation
+Good call on the LinkedIn blue. On the founder bios — they're quite dense paragraph text that most visitors will skip. I'd suggest trimming each to 2-3 punchy sentences max, focusing on credibility (where they've worked, what makes them different), and making the name/title bigger. The detail can live on their LinkedIn profiles.
+
+
+Contemplated design refinement and content hierarchy adjustments
+Contemplated design refinement and content hierarchy adjustments
+Two changes:
+
+LinkedIn blue (
+#0A66C2) — all LinkedIn links and icons now use the proper brand colour, including the hero "Follow us" link and the founder "Connect on LinkedIn" CTAs
+Founders simplified — cards are now centred with the photo on top, bigger name (text-2xl), and each bio trimmed to 2 sentences that hit the key credibility points. The detail lives on their LinkedIn profiles where people will actually read it
+Contact
+Code · HTML 
+Change it to be LinkedIn not Connect on LinkedIn for the founders bios, revert the Get in touch piece back to the previous Black LinkedIn as before. It was doing enough then without needing colour.
+
+14:47
+
+Thinking about updating founder bio links and reverting "Get in touch" styling to previous black design
+Thinking about updating founder bio links and reverting "Get in touch" styling to previous black design
+
+Revert hero LinkedIn link to black
+
+contact.html
++1
+-1
+
+Change Connect on LinkedIn to LinkedIn
+
+Script
+
+Copy
+
+Script
+
+You've used 90% of your session limit
+Get more usage
+
+
+Claude is AI and can make mistakes. Please double-check responses.
+Contact · HTML
+Copy
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Get in touch with Twelve Talent. Speak to one of our expert consultants about your hiring needs." />
+  <title>Twelve | Contact</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600&family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            twelve: '#FFDE59',
+            ink: '#0F172A',
+            surface: '#FAFAFA',
+            muted: '#64748B',
+            border: '#E2E8F0',
+          },
+          fontFamily: {
+            heading: ['Poppins', 'sans-serif'],
+            body: ['Archivo', 'sans-serif'],
+          },
+        }
+      }
+    }
+  </script>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Archivo', sans-serif; background: #FAFAFA; color: #0F172A; overflow-x: hidden; }
+    h1,h2,h3,h4,h5,h6 { font-family: 'Poppins', sans-serif; }
+ 
+    .reveal {
+      opacity: 0;
+      transform: translateY(32px);
+      transition: opacity 0.7s cubic-bezier(.16,1,.3,1), transform 0.7s cubic-bezier(.16,1,.3,1);
+    }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+    .reveal-delay-1 { transition-delay: 0.1s; }
+    .reveal-delay-2 { transition-delay: 0.2s; }
+    .reveal-delay-3 { transition-delay: 0.3s; }
+ 
+    .hero-word {
+      display: inline-block;
+      opacity: 0;
+      transform: translateY(60px);
+      filter: blur(8px);
+      animation: wordReveal 0.8s cubic-bezier(.16,1,.3,1) forwards;
+    }
+    @keyframes wordReveal {
+      to { opacity: 1; transform: translateY(0); filter: blur(0); }
+    }
+    .hero-fade {
+      opacity: 0;
+      transform: translateY(24px);
+      animation: heroFade 0.7s cubic-bezier(.16,1,.3,1) forwards;
+    }
+    @keyframes heroFade {
+      to { opacity: 1; transform: translateY(0); }
+    }
+ 
+    .nav-link { position: relative; }
+    .nav-link::after {
+      content: '';
+      position: absolute;
+      bottom: -4px; left: 0;
+      width: 100%; height: 2px;
+      background: #FFDE59;
+      transform: scaleX(0);
+      transform-origin: right;
+      transition: transform 0.3s ease;
+    }
+    .nav-link:hover::after { transform: scaleX(1); transform-origin: left; }
+    .nav-active::after { transform: scaleX(1); }
+ 
+    .accent-dot {
+      display: inline-block;
+      width: 10px; height: 10px;
+      background: #FFDE59;
+      border-radius: 50%;
+      margin-left: 4px;
+      vertical-align: middle;
+    }
+ 
+    .section-divider {
+      width: 64px;
+      height: 3px;
+      background: #FFDE59;
+      border-radius: 2px;
+    }
+ 
+    .btn-primary {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: #0F172A;
+      color: #fff;
+      padding: 14px 32px;
+      border-radius: 999px;
+      font-family: 'Poppins', sans-serif;
+      font-weight: 600;
+      font-size: 1rem;
+      text-decoration: none;
+      transition: all 0.3s cubic-bezier(.16,1,.3,1);
+      border: 1.5px solid transparent;
+      cursor: pointer;
+    }
+    .btn-primary:hover {
+      background: #fff;
+      color: #0F172A;
+      border-color: #0F172A;
+      transform: translateY(-2px);
+      box-shadow: 0 8px 24px rgba(15,23,42,0.12);
+    }
+    .btn-primary svg { transition: transform 0.3s; }
+    .btn-primary:hover svg { transform: translateX(4px); }
+ 
+    /* Form styles */
+    .form-input {
+      width: 100%;
+      padding: 14px 16px;
+      border: 1.5px solid #E2E8F0;
+      border-radius: 12px;
+      font-family: 'Archivo', sans-serif;
+      font-size: 1rem;
+      color: #0F172A;
+      background: #fff;
+      transition: all 0.25s ease;
+      outline: none;
+    }
+    .form-input::placeholder { color: #94A3B8; }
+    .form-input:focus {
+      border-color: #FFDE59;
+      box-shadow: 0 0 0 3px rgba(255,222,89,0.15);
+    }
+    textarea.form-input { resize: vertical; min-height: 120px; }
+ 
+    .form-label {
+      display: block;
+      font-family: 'Poppins', sans-serif;
+      font-weight: 600;
+      font-size: 0.875rem;
+      color: #0F172A;
+      margin-bottom: 6px;
+    }
+    .form-label .required {
+      color: #FFDE59;
+      margin-left: 2px;
+    }
+ 
+    /* Founder card */
+    .founder-card {
+      background: #fff;
+      border: 1px solid #E2E8F0;
+      border-radius: 16px;
+      padding: 32px;
+      transition: all 0.35s cubic-bezier(.16,1,.3,1);
+    }
+    .founder-card:hover {
+      border-color: #FFDE59;
+      box-shadow: 0 12px 40px rgba(255,222,89,0.1);
+      transform: translateY(-4px);
+    }
+    .founder-img {
+      width: 96px;
+      height: 96px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 3px solid #FFDE59;
+    }
+ 
+    #mobile-menu {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.35s ease;
+    }
+    #mobile-menu.open { max-height: 400px; }
+ 
+    .hero-section::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.03'/%3E%3C/svg%3E");
+      pointer-events: none;
+      z-index: 0;
+    }
+  </style>
+</head>
+ 
+<body>
+ 
+  <!-- Yellow accent bar -->
+  <div class="h-1 bg-twelve fixed top-0 left-0 right-0 z-[60]" style="background:#FFDE59;"></div>
+ 
+  <!-- ========== HEADER ========== -->
+  <header class="fixed top-1 left-0 right-0 z-50 bg-white/95 backdrop-blur-md border-b border-border/50">
+    <div class="max-w-7xl mx-auto px-6 flex items-center justify-between h-16 md:h-[72px]">
+      <a href="index.html" class="flex-shrink-0">
+        <img src="https://raw.githubusercontent.com/twelvetalent/twelvetalent-site/refs/heads/main/TWELVE%20with%20logo%20no%20background.png" alt="Twelve Talent" class="h-8 md:h-9 w-auto" />
+      </a>
+      <nav class="hidden md:flex items-center gap-8">
+        <a href="index.html" class="nav-link text-sm font-medium text-ink/70 hover:text-ink transition-colors">Home</a>
+        <a href="services.html" class="nav-link text-sm font-medium text-ink/70 hover:text-ink transition-colors">Services</a>
+        <a href="platform.html" class="nav-link text-sm font-medium text-ink/70 hover:text-ink transition-colors">Platform</a>
+        <a href="contact.html" class="nav-link nav-active text-sm font-medium text-ink transition-colors">Contact</a>
+        <a href="https://hub.twelvetalent.co/" class="text-sm font-semibold text-ink border border-border rounded-full px-5 py-2 hover:border-twelve hover:bg-twelve/5 transition-all">Log In</a>
+      </nav>
+      <button id="hamburger" class="md:hidden p-2 -mr-2" aria-label="Toggle menu" aria-expanded="false">
+        <svg class="w-6 h-6 text-ink" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M4 6h16M4 12h16M4 18h16"/>
+        </svg>
+      </button>
+    </div>
+    <div id="mobile-menu" class="md:hidden border-t border-border/50 bg-white">
+      <nav class="flex flex-col px-6 py-4 gap-1">
+        <a href="index.html" class="py-3 text-sm font-medium text-ink/70 hover:text-ink border-b border-border/30">Home</a>
+        <a href="services.html" class="py-3 text-sm font-medium text-ink/70 hover:text-ink border-b border-border/30">Services</a>
+        <a href="platform.html" class="py-3 text-sm font-medium text-ink/70 hover:text-ink border-b border-border/30">Platform</a>
+        <a href="contact.html" class="py-3 text-sm font-semibold text-ink border-b border-border/30">Contact</a>
+        <a href="https://hub.twelvetalent.co/" class="mt-2 text-center text-sm font-semibold text-ink border border-ink/20 rounded-full px-5 py-3 hover:bg-ink hover:text-white transition-all">Log In</a>
+      </nav>
+    </div>
+  </header>
+ 
+ 
+  <main>
+ 
+    <!-- ========== HERO + FORM ========== -->
+    <section class="hero-section relative pt-28 pb-20 md:pt-36 md:pb-28">
+      <div class="relative z-10 max-w-7xl mx-auto px-6">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-start">
+ 
+          <!-- Left: copy -->
+          <div class="pt-4">
+            <h1 class="font-heading font-extrabold text-ink leading-[0.95] tracking-tight text-5xl sm:text-6xl md:text-7xl mb-6">
+              <span class="hero-word" style="animation-delay:0.2s;">Get</span>
+              <span class="hero-word" style="animation-delay:0.35s;">in</span>
+              <span class="hero-word" style="animation-delay:0.5s;">touch<span class="accent-dot"></span></span>
+            </h1>
+ 
+            <p class="hero-fade text-lg md:text-xl text-muted leading-relaxed mb-10 max-w-md" style="animation-delay:0.75s;">
+              What are you waiting for? Speak to one of our expert consultants for a no-obligation chat.
+            </p>
+ 
+            <div class="hero-fade space-y-6" style="animation-delay:0.95s;">
+              <div class="flex items-center gap-4">
+                <div class="w-10 h-10 rounded-lg bg-twelve/15 flex items-center justify-center flex-shrink-0">
+                  <svg class="w-5 h-5 text-ink" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+                </div>
+                <div>
+                  <p class="text-sm text-muted">Email us</p>
+                  <a href="mailto:contact@twelvetalent.co" class="text-ink font-medium hover:text-twelve transition-colors">contact@twelvetalent.co</a>
+                </div>
+              </div>
+ 
+              <div class="flex items-center gap-4">
+                <div class="w-10 h-10 rounded-lg bg-twelve/15 flex items-center justify-center flex-shrink-0">
+                  <svg class="w-5 h-5 text-ink" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1"/></svg>
+                </div>
+                <div>
+                  <p class="text-sm text-muted">Follow us</p>
+                  <a href="https://linkedin.com/company/twelvetalent" target="_blank" rel="noopener" class="text-ink font-medium hover:text-twelve transition-colors">LinkedIn</a>
+                </div>
+              </div>
+            </div>
+          </div>
+ 
+          <!-- Right: form -->
+          <div class="hero-fade" style="animation-delay:0.6s;">
+            <div class="bg-white border border-border rounded-2xl p-8 md:p-10 shadow-sm">
+              <div class="space-y-5">
+                <div>
+                  <label class="form-label">Name <span class="required">*</span></label>
+                  <input type="text" class="form-input" placeholder="Your name" required />
+                </div>
+ 
+                <div>
+                  <label class="form-label">Email <span class="required">*</span></label>
+                  <input type="email" class="form-input" placeholder="you@company.com" required />
+                </div>
+ 
+                <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+                  <div>
+                    <label class="form-label">Phone Number</label>
+                    <input type="tel" class="form-input" placeholder="+44" />
+                  </div>
+                  <div>
+                    <label class="form-label">LinkedIn Profile</label>
+                    <input type="url" class="form-input" placeholder="linkedin.com/in/..." />
+                  </div>
+                </div>
+ 
+                <div>
+                  <label class="form-label">Message</label>
+                  <textarea class="form-input" placeholder="Tell us about your hiring needs..."></textarea>
+                </div>
+ 
+                <button type="submit" class="btn-primary w-full justify-center mt-2">
+                  Submit
+                  <svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+                </button>
+              </div>
+            </div>
+          </div>
+ 
+        </div>
+      </div>
+    </section>
+ 
+ 
+    <!-- ========== FOUNDERS ========== -->
+    <section class="py-20 md:py-28 bg-white border-t border-border/50">
+      <div class="max-w-7xl mx-auto px-6">
+        <div class="text-center mb-16">
+          <h2 class="reveal font-heading font-bold text-4xl md:text-5xl text-ink mb-4">Our Founders<span class="accent-dot"></span></h2>
+          <div class="reveal reveal-delay-1 section-divider mx-auto"></div>
+        </div>
+ 
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+ 
+          <!-- Ben -->
+          <div class="reveal reveal-delay-1 founder-card text-center">
+            <img src="https://umsousercontent.com/lib_MeASmRnviYgijZcI/vdo8il3g847qypoo.png?w=140&h=180&fit=crop&dpr=2" alt="Ben Ross" class="founder-img mx-auto mb-5" />
+            <h3 class="font-heading font-bold text-2xl text-ink">Ben Ross</h3>
+            <p class="text-muted text-sm mb-4">Co-Founder</p>
+            <p class="text-muted leading-relaxed mb-5">
+              8 years in agency recruitment before moving in-house to scale engineering teams at Trainline, Checkout, and Moonpay. Passionate about modernising recruitment from both sides of the fence.
+            </p>
+            <a href="https://www.linkedin.com/in/benjsross/" target="_blank" rel="noopener" class="inline-flex items-center gap-2 text-sm font-semibold transition-colors" style="color:#0A66C2;" onmouseover="this.style.color='#004182'" onmouseout="this.style.color='#0A66C2'">
+              <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+              LinkedIn
+            </a>
+          </div>
+ 
+          <!-- Matt -->
+          <div class="reveal reveal-delay-2 founder-card text-center">
+            <img src="https://umsousercontent.com/lib_MeASmRnviYgijZcI/978wfl5kt1remk38.png?w=140&h=180&fit=crop&dpr=2" alt="Matt Weetman" class="founder-img mx-auto mb-5" />
+            <h3 class="font-heading font-bold text-2xl text-ink">Matt Weetman</h3>
+            <p class="text-muted text-sm mb-4">Co-Founder</p>
+            <p class="text-muted leading-relaxed mb-5">
+              Built a career spanning agency recruitment, consultancy, and executive search across two leading brands. Driven by a low-ego, streamlined, and honest approach to hiring.
+            </p>
+            <a href="https://www.linkedin.com/in/mattweetman/" target="_blank" rel="noopener" class="inline-flex items-center gap-2 text-sm font-semibold transition-colors" style="color:#0A66C2;" onmouseover="this.style.color='#004182'" onmouseout="this.style.color='#0A66C2'">
+              <svg class="w-5 h-5 fill-current" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+              LinkedIn
+            </a>
+          </div>
+ 
+        </div>
+      </div>
+    </section>
+ 
+ 
+    <!-- ========== JOIN US ========== -->
+    <section class="py-20 md:py-24 bg-surface border-t border-border/50">
+      <div class="max-w-7xl mx-auto px-6 text-center">
+        <h2 class="reveal font-heading font-bold text-3xl md:text-4xl text-ink mb-4">Join Us<span class="accent-dot"></span></h2>
+        <p class="reveal reveal-delay-1 text-lg text-muted max-w-2xl mx-auto leading-relaxed">
+          We're a growing, remote-first team of experienced professionals. If you share the same views and want to be part of changing the perception of agency recruitment, then we'd love to chat!
+        </p>
+        <div class="reveal reveal-delay-2 mt-8">
+          <a href="mailto:contact@twelvetalent.co" class="btn-primary">
+            Say Hello
+            <svg width="16" height="16" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+          </a>
+        </div>
+      </div>
+    </section>
+ 
+  </main>
+ 
+ 
+  <!-- ========== FOOTER ========== -->
+  <footer class="bg-ink text-white/60 py-16 border-t border-white/5">
+    <div class="max-w-7xl mx-auto px-6">
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-10 md:gap-8 mb-12">
+        <div class="md:col-span-1">
+          <img src="https://raw.githubusercontent.com/twelvetalent/twelvetalent-site/refs/heads/main/TWELVE%20with%20logo%20no%20background.png" alt="Twelve Talent" class="h-8 w-auto brightness-0 invert mb-4" />
+          <p class="text-sm leading-relaxed text-white/40">Tech recruitment, built differently.</p>
+        </div>
+        <div>
+          <h4 class="font-heading font-semibold text-white text-sm tracking-wider uppercase mb-4">Company</h4>
+          <nav class="flex flex-col gap-2">
+            <a href="index.html" class="text-sm text-white/50 hover:text-twelve transition-colors">Home</a>
+            <a href="services.html" class="text-sm text-white/50 hover:text-twelve transition-colors">Services</a>
+            <a href="platform.html" class="text-sm text-white/50 hover:text-twelve transition-colors">Platform</a>
+            <a href="contact.html" class="text-sm text-white/50 hover:text-twelve transition-colors">Contact</a>
+            <a href="https://hub.twelvetalent.co/" class="text-sm text-white/50 hover:text-twelve transition-colors">Login</a>
+          </nav>
+        </div>
+        <div>
+          <h4 class="font-heading font-semibold text-white text-sm tracking-wider uppercase mb-4">Legal</h4>
+          <nav class="flex flex-col gap-2">
+            <a href="privacy-policy.html" class="text-sm text-white/50 hover:text-twelve transition-colors">Privacy Policy</a>
+            <a href="cookie-policy.html" class="text-sm text-white/50 hover:text-twelve transition-colors">Cookie Policy</a>
+          </nav>
+        </div>
+        <div>
+          <h4 class="font-heading font-semibold text-white text-sm tracking-wider uppercase mb-4">Connect</h4>
+          <div class="flex gap-4">
+            <a href="https://linkedin.com/company/twelvetalent" target="_blank" rel="noopener" aria-label="LinkedIn" class="w-9 h-9 rounded-full border border-white/10 flex items-center justify-center hover:border-twelve hover:text-twelve transition-all">
+              <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/></svg>
+            </a>
+            <a href="https://twitter.com/twelvetalent" target="_blank" rel="noopener" aria-label="X (formerly Twitter)" class="w-9 h-9 rounded-full border border-white/10 flex items-center justify-center hover:border-twelve hover:text-twelve transition-all">
+              <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+            </a>
+            <a href="mailto:contact@twelvetalent.co" aria-label="Email" class="w-9 h-9 rounded-full border border-white/10 flex items-center justify-center hover:border-twelve hover:text-twelve transition-all">
+              <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M22 6c0-1.1-.9-2-2-2H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6zm-2 0l-8 5-8-5h16zm0 12H4V8l8 5 8-5v10z"/></svg>
+            </a>
+          </div>
+        </div>
+      </div>
+      <div class="pt-8 border-t border-white/10 text-center">
+        <p class="text-xs text-white/30">&copy; 2025 Twelve Group Limited. All Rights Reserved.</p>
+      </div>
+    </div>
+  </footer>
+ 
+ 
+  <script>
+    const hamburger = document.getElementById('hamburger');
+    const mobileMenu = document.getElementById('mobile-menu');
+    hamburger.addEventListener('click', () => {
+      const open = mobileMenu.classList.toggle('open');
+      hamburger.setAttribute('aria-expanded', open);
+    });
+ 
+    const revealObserver = new IntersectionObserver((entries) => {
+      entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); } });
+    }, { threshold: 0.1, rootMargin: '0px 0px -40px 0px' });
+    document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+  </script>
+ 
+</body>
+</html>
+ 
+
+
